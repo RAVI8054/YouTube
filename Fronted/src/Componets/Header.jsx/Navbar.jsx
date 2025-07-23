@@ -10,8 +10,8 @@ import { IoIosSearch } from "react-icons/io";
 
 function Navbar() {
   return (
-    <nav>
-      <div className=" px-4  flex justify-between">
+    <nav className=" flex  fixed top-0  justify-center items-center w-[100%]   z-10 bg-white">
+      <div className=" flex justify-between items-center w-[96%]  py-1 ">
       {/* hamburger icon +logo+logo image seaction */}
         <section className="flex items-center cursor-pointer">
           <GiHamburgerMenu size="32px" />

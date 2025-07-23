@@ -15,24 +15,66 @@ const SidebarItem =[
     {
         icon: <MdSubscriptions size={"24px"} />,
         title: "subsciptions"
-    }
-]
+    },
+    {
+        icon: <IoHomeSharp size={"24px"} />,
+        title: "Home"
+    },
+    {
+        icon: <SiYoutubeshorts size={"24px"} />,
+        title: "shorts"
+    },
+    {
+        icon: <MdSubscriptions size={"24px"} />,
+        title: "subsciptions"
+    },
+    {
+        icon: <IoHomeSharp size={"24px"} />,
+        title: "Home"
+    },
+    {
+        icon: <SiYoutubeshorts size={"24px"} />,
+        title: "shorts"
+    },
+    {
+        icon: <MdSubscriptions size={"24px"} />,
+        title: "subsciptions"
+    },
+    {
+        icon: <IoHomeSharp size={"24px"} />,
+        title: "Home"
+    },
+    {
+        icon: <SiYoutubeshorts size={"24px"} />,
+        title: "shorts"
+    },
+    {
+        icon: <MdSubscriptions size={"24px"} />,
+        title: "subsciptions"
+    },
+    {
+        icon: <IoHomeSharp size={"24px"} />,
+        title: "Home"
+    },
+    {
+        icon: <SiYoutubeshorts size={"24px"} />,
+        title: "shorts"
+    }]
 
 function Sidebar() {
   return (
-      <section className="  w-[14%] ml-5">
-       <div className="ml-4">
+    //   <section className="absolute left-0 w-auto h-[calc(100vh-4.625rem)] ml-8 overflow-y-scroll overflow-x-hidden">
+      <section className=" relative w-[200px] ml-10 h-[calc(100vh-4.625rem)] overflow-y-scroll overflow-x-hidden">
        {
         SidebarItem.map((item)=>{
        return(
-           <div key={uuidv4()} className="flex  my-3 ">
+           <div key={uuidv4()} className="flex  my-3 py-3 ">
               {item.icon}
                <span className="ml-5 font-semibold">{item.title}</span>
            </div>
        )
         })
        }
-       </div>
     </section> 
   )
 }
