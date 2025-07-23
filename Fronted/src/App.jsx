@@ -6,7 +6,10 @@ function App() {
   return (
     <div className=''>
      <Navbar/>
-     <Sidebar/>
+     <div className='flex mt-4'>
+        <Sidebar />
+        <h1>video render here...</h1>
+     </div>
     </div>
   )
 }

@@ -1,3 +1,7 @@
+//nav bar with seamtic tag +react icon + ract avtar
+// section--1 hamburger menu icon + youtube icon
+// section--2 search bar +search icon
+// section--3 creat chanal + sign in logo
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaPlus } from "react-icons/fa";
 import Avatar from "react-avatar";
@@ -6,9 +10,10 @@ import { IoIosSearch } from "react-icons/io";
 
 function Navbar() {
   return (
-    <div>
-      <div className=" px-4 flex justify-between">
-        <div className="flex items-center cursor-pointer">
+    <nav>
+      <div className=" px-4  flex justify-between">
+      {/* hamburger icon +logo+logo image seaction */}
+        <section className="flex items-center cursor-pointer">
           <GiHamburgerMenu size="32px" />
           <img
             className=""
@@ -16,8 +21,9 @@ function Navbar() {
             src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"
             alt=""
           />
-        </div>
-        <div className="flex w-[35%]  items-center ">
+        </section>
+     {/* input search +search icon button */}
+        <section className="flex w-[35%]  items-center ">
           <div className="border w-[100%]  border-gray-400 py-1 px-4 rounded-l-full ">
               <input
               className="w-full outline-none "
@@ -27,8 +33,9 @@ function Navbar() {
               {/* <IoIosSearch size="24px" /> */}
           </div>
           <button className="py-1 px-3 border border-gray-400 rounded-r-full cursor-pointer" > <IoIosSearch size="24px" /></button>
-        </div>
-        <div className="flex items-center ">
+        </section>
+        {/* login + newchanle + notfication icon section */}
+        <section className="flex items-center ">
           <div className="  rounded-full bg-gray-400 flex  cursor-pointer items-center px-3">
             <FaPlus size={"25px"} />
             <div className="px-1">CREATE</div>
@@ -43,9 +50,9 @@ function Navbar() {
               round={true}
             />
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </nav>
   );
 }
 
