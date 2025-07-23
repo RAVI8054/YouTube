@@ -7,14 +7,15 @@ import { FaPlus } from "react-icons/fa";
 import Avatar from "react-avatar";
 import { IoIosNotifications } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../../Utils/appSlice";
+
 
 function Navbar() {
-// state for handle toggle button
-const [open,setOpen] = useState(true);
-
+  const dispatch = useDispatch()
+// handle toggle button
 function toggleHandler(){
-  setOpen(!open)
+ dispatch(toggleSidebar())
 }
 
 
