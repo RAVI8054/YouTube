@@ -1,19 +1,9 @@
-import React from 'react'
-import Navbar from './Componets/Header.jsx/Navbar'
-import Sidebar from './Componets/Header.jsx/Sidebar'
-import Feed from './Componets/Home.jsx/Feed'
+import Navbar from "./Componets/Navbar"
 
 function App() {
   return (
-    <div className=''>
+    <div className='App'>
      <Navbar/>
-     <div className='flex mt-16'>
-        <Sidebar />
-        <div>
-          <Feed/>
-          feed
-        </div>
-     </div>
     </div>
   )
 }
