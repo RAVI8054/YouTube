@@ -131,6 +131,7 @@ chanal name */
     margin-top: 10px;
     box-sizing: border-box;
 }
+/* youtube comment section */
 
  .youtubeCommentSection {
     display: flex;
@@ -143,26 +144,26 @@ chanal name */
     font-weight: 500;
 }
 
-/* .youtubeSelfComment {
+.youtubeSelfComment {
     display: flex;
     margin-top: 10px;
     gap: 10px;
 } */
 
-/* .video_youtubeSelfCommentProfile {
+.video_youtubeSelfCommentProfile {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-} */
+}
 
-/* .addAComment {
+.addAComment {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-} */
+}
 
-/* .addAcommentInput {
+.addAcommentInput {
     width: 100%;
     background-color: black;
     color: white;
@@ -178,16 +179,16 @@ chanal name */
     &::placeholder {
         font-size: 16px;
     }
-} */
+}
 
-/* .cancelSubmitComment {
+.cancelSubmitComment {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
     margin-top: 10px;
-} */
+}
 
-/* .cancelComment {
+.cancelComment {
     padding: 8px 16px;
     border-radius: 18px;
     border: 1px solid;
@@ -197,11 +198,82 @@ chanal name */
         background-color: white;
         color: black;
     }
-} */
+}
+
+.youtubeOthersComments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 
+.others_commentSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.others_commentSectionHeader {
+    display: flex;
+    gap: 10px;
+}
 
 
+.channelName_comment {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.commentTimingOthers {
+    font-size: 14px;
+    color: #AAAAAA;
+}
+
+.otherCommentSectionComment {
+    margin-top: 8px;
+}
+
+/* ------------------------------------ */
+.videoSuggestions {
+    width: 100%;
+    max-width: 406px;
+    padding: 10px 15px;
+    gap: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.videoSuggestionsBlock {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.video_suggetion_thumbnail {
+    width: 168px;
+    height: 94px;
+}
+
+.video_suggetion_thumbnail_img {
+    width: inherit;
+}
+
+.video_suggetions_About {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.video_suggetions_About_title {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.video_suggetions_About_Profile {
+    color: #ffffff9c;
+    font-size: 10px;
+}
 
 
 

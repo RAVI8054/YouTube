@@ -1,8 +1,7 @@
 import "./Video.css";
-import { BiLike } from "react-icons/bi"; 
+import { BiLike } from "react-icons/bi";
 import { BiDislike } from "react-icons/bi";
 import Avatar from "react-avatar";
-
 
 function Video() {
   return (
@@ -35,47 +34,143 @@ function Video() {
                   />
                 </div>
                 <div className="youtubeVideo_subsView">
-                {/* video title */}
-                        <div className="youtubePostProfileName">{"user1"}</div>
-                        {/* chanal name */}
-                        <div className="youtubePostProfileSubs">chanal name</div>
+                  {/* video title */}
+                  <div className="youtubePostProfileName">{"user1"}</div>
+                  {/* chanal name */}
+                  <div className="youtubePostProfileSubs">chanal name</div>
                 </div>
                 {/* subscribe button */}
-                              <div className="subscribeBtnYoutube">Subscribe</div>
+                <div className="subscribeBtnYoutube">Subscribe</div>
               </div>
-                          {/* right part description like +dislike buttom */}
-                          <div className="youtube_video_likeBlock">
-                          {/* like button  */}
-                              <div className="youtube_video_likeBlock_Like">
-                                  <BiLike  size={"25px"} />
-                                  <div className="youtube_video_likeBlock_NoOfLikes">100</div>
-                              </div>
-                              <div className="youtubeVideoDivider"></div>
-                              <div className="youtube_video_likeBlock_Like">
-                                  <div className="youtube_video_likeBlock_NoOfLikes">10</div>
-                                  <BiDislike size={"25px"} />
-                                  
-                              </div>
-        
-                          </div>
+              {/* right part description like +dislike buttom */}
+              <div className="youtube_video_likeBlock">
+                {/* like button  */}
+                <div className="youtube_video_likeBlock_Like">
+                  <BiLike size={"25px"} />
+                  <div className="youtube_video_likeBlock_NoOfLikes">100</div>
+                </div>
+                <div className="youtubeVideoDivider"></div>
+                <div className="youtube_video_likeBlock_Like">
+                  <div className="youtube_video_likeBlock_NoOfLikes">10</div>
+                  <BiDislike size={"25px"} />
+                </div>
+              </div>
             </div>
           </div>
-{/* video description part */}
-                  <div className="youtube_video_About">
-                    <div>2 year ago</div>
-                    <div>its very intersting story</div>
-                  </div>
- {/* video comment section */}
-                  <div className="youtubeCommentSection">
-                      <div className="youtubeCommentSectionTitle">4 commets</div>
-                  </div>
+          {/* video description part */}
+          <div className="youtube_video_About">
+            <div>2 year ago</div>
+            <div>its very intersting story</div>
+          </div>
+          {/* video comment section */}
+          <div className="youtubeCommentSection">
+            <div className="youtubeCommentSectionTitle">4 commets</div>
+          </div>
+          <div className="youtubeSelfComment">
+            <Avatar
+              className="cursor-pointer video_youtubeSelfCommentProfile "
+              src="https://plus.unsplash.com/premium_photo-1752768205947-5ae983e513ef?q=80&w=875&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              size={28}
+              round={true}
+            />
+            <div className="addAComment">
+              <input
+                type="text"
+                className="addAcommentInput"
+                placeholder="Add a comment"
+              />
+              {/* button cancel or commit */}
+              <div className="cancelSubmitComment">
+                <div className="cancelComment">cancel</div>
+                <div className="cancelComment">commit</div>
+              </div>
+            </div>
+          </div>
 
+          {/* commit History section */}
+          <div className="youtubeOthersComments">
+            {/* comment1 */}
+            <div className="youtubeSelfComment">
+              <Avatar
+                className="cursor-pointer video_youtubeSelfCommentProfile "
+                src="https://plus.unsplash.com/premium_photo-1752768205947-5ae983e513ef?q=80&w=875&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                size={28}
+                round={true}
+              />
 
+              <div className="others_commentSection">
+                <div className="others_commentSectionHeader">
+                  <div className="channelName_comment">username</div>
+                  <div className="commentTimingOthers">1 year</div>
+                </div>
+                <div className="otherCommentSectionComment">
+                  This is very long projct
+                </div>
+              </div>
+            </div>
+            {/* commment 2 */}
+            <div className="youtubeSelfComment">
+              <Avatar
+                className="cursor-pointer video_youtubeSelfCommentProfile "
+                src="https://plus.unsplash.com/premium_photo-1752768205947-5ae983e513ef?q=80&w=875&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                size={28}
+                round={true}
+              />
+
+              <div className="others_commentSection">
+                <div className="others_commentSectionHeader">
+                  <div className="channelName_comment">username</div>
+                  <div className="commentTimingOthers">1 year</div>
+                </div>
+                <div className="otherCommentSectionComment">
+                  This is very long projct
+                </div>
+              </div>
+            </div>
+            {/* commet-3 */}
+            <div className="youtubeSelfComment">
+              <Avatar
+                className="cursor-pointer video_youtubeSelfCommentProfile "
+                src="https://plus.unsplash.com/premium_photo-1752768205947-5ae983e513ef?q=80&w=875&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                size={28}
+                round={true}
+              />
+
+              <div className="others_commentSection">
+                <div className="others_commentSectionHeader">
+                  <div className="channelName_comment">username</div>
+                  <div className="commentTimingOthers">1 year</div>
+                </div>
+                <div className="otherCommentSectionComment">
+                  This is very long projct
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-{/* ------------------------------------------------------------ */}
+      {/* ------------------------------------------------------------ */}
       {/* main-2 div. vide sugestion sidebar start */}
-      <div className="videoSuggestion">video</div>
+      <div className="videoSuggestion">
+        <div className="videoSuggestionsBlock">
+        {/* sugection video */}
+          <div className="video_suggetion_thumbnail">
+            <img
+              className="video_suggetion_thumbnail_img"
+              src="https://images.unsplash.com/photo-1753118202506-259f86ed3e40?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt=""
+            />
+          </div>
+{/* suggection video description */}
+                  <div className="video_suggetions_About">
+                      <div className="video_suggetions_About_title">
+                          full-stack Yt clone where users can view  videos
+                      </div>
+                      <div className="video_suggetions_About_Profile">internshala</div>
+                      <div className="video_suggetions_About_Profile">13k views .1 days ago</div>
+                  </div>
+        </div>
+      </div>
     </div>
   );
 }
