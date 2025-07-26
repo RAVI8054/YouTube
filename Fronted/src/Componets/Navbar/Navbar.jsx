@@ -41,6 +41,7 @@ function Navbar({ setSideNavbarfunc,sideNavbar}) {
       </div>
       {/* navbar-center */}
       <div className="navbar-middle">
+      {/* for search icon+search icon */}
         <div className="navbar_searchBox">
           <input
             className="navbar_searchBoxInput"

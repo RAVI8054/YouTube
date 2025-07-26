@@ -40,7 +40,7 @@
     margin-top: 10px;
 }
 
- .youtube_video_ProfileBlock_left {
+ .youtube_video_profileBlock_left {
     display: flex;
     gap: 15px;
 
@@ -87,8 +87,9 @@ chanal name */
     cursor: pointer;
     font-size: 14px;
 } 
-
-/* .youtube_video_likeBlock {
+ /* like button  css */
+.youtube_video_likeBlock {
+    margin-right: 20px;
     display: flex;
     gap: 10px;
     background-color: #a5a5a538;
@@ -98,16 +99,15 @@ chanal name */
     box-sizing: border-box;
     border-radius: 18px;
     cursor: pointer;
-} */
+}
 
-/* .youtube_video_likeBlock_Like {
-
+.youtube_video_likeBlock_Like {
     display: flex;
     gap: 10px;
 
-} */
+}
 
-/* .youtube_video_likeBlock_NoOfLikes {
+.youtube_video_likeBlock_NoOfLikes {
     font-weight: 500;
 }
 
@@ -115,9 +115,9 @@ chanal name */
     width: 0px;
     height: 20px;
     border: 1px solid;
-} */
+}
 
-/* .youtube_video_About {
+.youtube_video_About {
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -130,19 +130,18 @@ chanal name */
     gap: 10px;
     margin-top: 10px;
     box-sizing: border-box;
-} */
+}
 
-
-/* .youtubeCommentSection {
+ .youtubeCommentSection {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-} */
+}
 
-/* .youtubeCommentSectionTitle {
+.youtubeCommentSectionTitle {
     font-size: 20px;
     font-weight: 500;
-} */
+}
 
 /* .youtubeSelfComment {
     display: flex;

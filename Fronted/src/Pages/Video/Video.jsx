@@ -1,5 +1,8 @@
 import "./Video.css";
+import { BiLike } from "react-icons/bi"; 
+import { BiDislike } from "react-icons/bi";
 import Avatar from "react-avatar";
+
 
 function Video() {
   return (
@@ -19,7 +22,7 @@ function Video() {
             {/* 1.for video title */}
             <div className="video_uTubeTitle">{"java script classes"}</div>
 
-            {/* video description image+like/dislikebutoon */}
+            {/* video description image+subscribe+title +chanal */}
             <div className="youtube_video_profileBlock">
               <div className="youtube_video_profileBlock_left">
                 {/* video description chanal image */}
@@ -40,11 +43,37 @@ function Video() {
                 {/* subscribe button */}
                               <div className="subscribeBtnYoutube">Subscribe</div>
               </div>
+                          {/* right part description like +dislike buttom */}
+                          <div className="youtube_video_likeBlock">
+                          {/* like button  */}
+                              <div className="youtube_video_likeBlock_Like">
+                                  <BiLike  size={"25px"} />
+                                  <div className="youtube_video_likeBlock_NoOfLikes">100</div>
+                              </div>
+                              <div className="youtubeVideoDivider"></div>
+                              <div className="youtube_video_likeBlock_Like">
+                                  <div className="youtube_video_likeBlock_NoOfLikes">10</div>
+                                  <BiDislike size={"25px"} />
+                                  
+                              </div>
+        
+                          </div>
             </div>
           </div>
+{/* video description part */}
+                  <div className="youtube_video_About">
+                    <div>2 year ago</div>
+                    <div>its very intersting story</div>
+                  </div>
+ {/* video comment section */}
+                  <div className="youtubeCommentSection">
+                      <div className="youtubeCommentSectionTitle">4 commets</div>
+                  </div>
+
+
         </div>
       </div>
-
+{/* ------------------------------------------------------------ */}
       {/* main-2 div. vide sugestion sidebar start */}
       <div className="videoSuggestion">video</div>
     </div>
