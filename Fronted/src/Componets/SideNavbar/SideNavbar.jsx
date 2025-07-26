@@ -11,9 +11,9 @@ import { BiSolidVideos } from "react-icons/bi";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { BiLike } from "react-icons/bi";
 
-function SideNavbar() {
+function SideNavbar({ sideNavbar }) {
   return (
-    <div className="home-sideNavbar">
+    <div className={sideNavbar ?"home-sideNavbar":"homeSideNavbarHide"}>
       {/* sidebar top sedction */}
       <div className="home_sideNavbarTop">
         {/* home icon */}

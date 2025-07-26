@@ -12,8 +12,8 @@ const [sideNavbar,setSideNavbar]=useState("true")
 
   return (
     <div className='App'>
-      <Navbar setSideNavbarfunc={setSideNavbarfunc} />
-      <Home />
+      <Navbar setSideNavbarfunc={setSideNavbarfunc}  sideNavbar={sideNavbar}/>
+      <Home  sideNavbar={sideNavbar}/>
     </div>
   )
 }

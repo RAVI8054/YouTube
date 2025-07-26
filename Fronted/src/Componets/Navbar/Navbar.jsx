@@ -6,8 +6,9 @@ import { MdVideoCall } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import Avatar from "react-avatar";
 import { useState } from "react";
+import SideNavbar from "../SideNavbar/SideNavbar";
 
-function Navbar() {
+function Navbar({ setSideNavbarfunc,sideNavbar}) {
     //login profile change with state
   const [userPic, setUserPic] = useState(
     "https://i.pinimg.com/736x/05/78/16/05781612d2cbadf5e423cd0cef59b4f1.jpg"
@@ -18,12 +19,16 @@ function Navbar() {
     setNavbarModal(prv=>!prv)
   }
 
+  function sideNavbarFunc(){
+    setSideNavbarfunc(!sideNavbar)
+  }
+
 
   return (
     <div className="navbar">
       {/* navbar left */}
       <div className="navbar-left">
-        <div className="navbarHamburger">
+        <div className="navbarHamburger" onClick={sideNavbarFunc}>
           <GiHamburgerMenu size="32px" color="white" />
         </div>
         <div className="navbar_youtubeImg ml-7 bg-amber-50">

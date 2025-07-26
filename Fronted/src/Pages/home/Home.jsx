@@ -3,10 +3,10 @@ import SideNavbar from '../../Componets/SideNavbar/SideNavbar'
 import HomePage from '../../Componets/HomePage/HomePage'
 import "./Home.css"
 
-function Home() {
+function Home({ sideNavbar }) {
   return (
     <div className="home">
-       <SideNavbar/>
+      <SideNavbar sideNavbar={sideNavbar}/>
        <HomePage/>
     </div>
   )

@@ -68,13 +68,12 @@ body {
 
 .navbar_searchBox {
   display: flex;
-  /* align-items: center;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 20px;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  align-items: center;
     overflow: hidden;
-    flex: 1;
-     */
+
   width: 80%;
 }
 
