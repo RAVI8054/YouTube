@@ -19,7 +19,8 @@ body {
 
 /* ---------- Navbar ---------- */
 .navbar {
-  background-color: rgb(253, 251, 212);
+  background-color:rgb(20, 1, 1);
+  color: #eaeaea;
   position: fixed;
   top: 0px;
   height: auto;
@@ -27,7 +28,6 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0 8px;
   color: var(--accent-color);
   width: 100%;
   box-sizing: border-box;
@@ -43,6 +43,10 @@ body {
   align-items: center;
   gap: 8px;
   min-width: fit-content;
+}
+
+.navbarHamburger{
+  margin-left:20px;
 }
 /* Left Section end */
 
