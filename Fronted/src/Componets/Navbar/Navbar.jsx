@@ -6,7 +6,6 @@ import { MdVideoCall } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import Avatar from "react-avatar";
 import { useState } from "react";
-import SideNavbar from "../SideNavbar/SideNavbar";
 
 function Navbar({ setSideNavbarfunc,sideNavbar}) {
     //login profile change with state
