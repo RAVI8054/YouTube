@@ -1,6 +1,7 @@
 import "./HomePage.css";
 import Avatar from "react-avatar";
 import { v4 as uuidv4 } from "uuid";
+import {Link} from "react-router-dom"
 
 function HomePage({ sideNavbar }) {
   //options filter Array for body contect catgory
@@ -43,12 +44,12 @@ function HomePage({ sideNavbar }) {
       <div className={sideNavbar ? "home_mainPage":"home_mainPageWithoutLink"}>
 
 {/* video=1 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -57,7 +58,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -69,14 +70,14 @@ function HomePage({ sideNavbar }) {
            <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
 {/* video=2 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -85,7 +86,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -97,14 +98,14 @@ function HomePage({ sideNavbar }) {
               <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
 {/* video=3 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -113,7 +114,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -125,14 +126,14 @@ function HomePage({ sideNavbar }) {
               <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
  {/* video=4 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -141,7 +142,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -153,14 +154,14 @@ function HomePage({ sideNavbar }) {
               <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
 {/* video=5 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -169,7 +170,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -181,14 +182,14 @@ function HomePage({ sideNavbar }) {
               <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
 {/* video=6 */}
-        <div className="youtube_Video">
+        <Link to={"/watch/1"} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/an_webp/myKnOjy77lQ/mqdefault_6s.webp?du=3000&sqp=CPSnksQG&rs=AOn4CLDKbhmsgGZF5u3NGfC_e-iJucp2Qw"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
               alt="Thumbnail"
             />
           </div>
@@ -197,7 +198,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSah5Lpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
                 size={32}
                 round={true}
               />
@@ -209,7 +210,63 @@ function HomePage({ sideNavbar }) {
               <div className="youtubeVideo_views">views</div>
             </div>
           </div>
-        </div>
+        </Link>
+        {/* video 7 */}
+        <Link to={"/watch/1"} className="youtube_Video">
+          {/* for video display */}
+          <div className="youtube_thumbnailBox">
+            <img
+              className="youtube_thumbnailPic"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
+              alt="Thumbnail"
+            />
+          </div>
+          {/* for video description */}
+          <div className="youtubeTitleBox">
+            <div className="youtubeTitleBoxProfile">
+              <Avatar
+                className="cursor-pointer youtube_thumbnail_profile"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                size={32}
+                round={true}
+              />
+            </div>
+            {/* classes for video descriptipons */}
+            <div className="youtubeTitleBox_Title">
+              <div className="youtube_videoTitle">User1</div>
+              <div className="youtube_channleName">@2user</div>
+              <div className="youtubeVideo_views">views</div>
+            </div>
+          </div>
+        </Link>
+        {/* video 8 */}
+        <Link to={"/watch/1"} className="youtube_Video">
+          {/* for video display */}
+          <div className="youtube_thumbnailBox">
+            <img
+              className="youtube_thumbnailPic"
+              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
+              alt="Thumbnail"
+            />
+          </div>
+          {/* for video description */}
+          <div className="youtubeTitleBox">
+            <div className="youtubeTitleBoxProfile">
+              <Avatar
+                className="cursor-pointer youtube_thumbnail_profile"
+                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+                size={32}
+                round={true}
+              />
+            </div>
+            {/* classes for video descriptipons */}
+            <div className="youtubeTitleBox_Title">
+              <div className="youtube_videoTitle">User1</div>
+              <div className="youtube_channleName">@2user</div>
+              <div className="youtubeVideo_views">views</div>
+            </div>
+          </div>
+        </Link>
 
       </div>
     </div>
