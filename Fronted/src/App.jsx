@@ -3,6 +3,7 @@ import Navbar from "./Componets/Navbar/Navbar";
 import Home from "./Pages/home/Home";
 import { Routes, Route } from "react-router-dom";
 import Video from "./Pages/Video/Video";
+import Profile from "./Pages/Profile/Profile";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home sideNavbar={sideNavbar} />} />
         <Route path="/watch/:id" element={<Video />} />
+        <Route path="/user/:id" element={<Profile  sideNavbar={sideNavbar} />} />
       </Routes>
     
     </div>
