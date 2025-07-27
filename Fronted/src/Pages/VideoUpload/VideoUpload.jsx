@@ -2,18 +2,42 @@ import { useState } from "react";
 import "./VideoUpload.css";
 import { PiYoutubeLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import axios from 'axios'
 
 
 function VideoUpload() {
 
-    const [inputField, setInputField] = useState({ "title":"", "description":"", "videoLink":"", "thumbnail":"", "videoType":"" })
-// fuction for handle input form
+    const [inputField, setInputField] = useState({ "title": "", "description": "", "videoLink": "", "thumbnail": "", "videoType": "" })
+    // fuction for handle input form
     const handleOnChangeInput = (event, name) => {
         setInputField({
             ...inputField, [name]: event.target.value
         })
     }
-console.log(inputField)
+    // console.log(inputField)
+    const uploadImage = async (e, type) => {
+        const files = e.target.files;
+        // console.log(files)
+        const data = new FormData();
+        data.append("file", files[0]);
+        data.append("upload_preset", "youtube-clone");
+        try {
+            const response = await axios.post(
+                `https://api.cloudinary.com/v1_1/dlgorbunu/${type}/upload`,
+                data
+            );
+            // console.log(response)
+            const url = response.data.url;
+            // console.log(url)
+            let val = type === "image" ? "thumbnail" : "videoLink"
+            setInputField({
+                ...inputField, [val]: url
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    console.log(inputField)
 
 
     return (
@@ -26,36 +50,37 @@ console.log(inputField)
                 {/* form section */}
                 <div className="uploadForm">
                     <input
-                        onChange={(e) => { handleOnChangeInput(e,"title")}}
-                    value={inputField.title}
+                        onChange={(e) => { handleOnChangeInput(e, "title") }}
+                        value={inputField.title}
                         type="text"
                         placeholder="Video or Title"
                         className="uploadFormInputs"
                     />
                     <input
-                        onChange={(e) => { handleOnChangeInput(e,"description") }}
-                    value={inputField.description}
+                        onChange={(e) => { handleOnChangeInput(e, "description") }}
+                        value={inputField.description}
                         type="text"
                         placeholder="Description"
                         className="uploadFormInputs"
-                    /> 
+                    />
                     <input
-                        onChange={(e) => { handleOnChangeInput(e,"videoType") }}
-                    value={inputField.videoType}
-                    type="text"
-                    placeholder="Category"
-                    className="uploadFormInputs"
-                />
-                {/* thhumbnail pic */}
-                <div>
-                        thumbnai <input type='file' accept="image/*" />
+                        onChange={(e) => { handleOnChangeInput(e, "videoType") }}
+                        value={inputField.videoType}
+                        type="text"
+                        placeholder="Category"
+                        className="uploadFormInputs"
+                    />
+                    {/* thumbnail pic */}
+                    <div>
+                        thumbnail <input type='file' accept="image/*" onChange={(e) => uploadImage(e, "image")} />
+                    </div>
+                    {/* uuload video input */}
+                    <div>
+                        Video <input type='file' accept="video/mp4,video/webm,video/" onChange={(e) => uploadImage(e, "video")} />
+                    </div>
                 </div>
-                {/* uuload video input */}
-                 <div>
-                    Video <input type='file' accept="video/mp4,video/webm,video/" />
-                </div>
-                </div>
-{/* upload btn */}
+                {/* upload btn */}
+
                 <div className="uploadBtns">
                     <div className="uploadBtn-form">Upload</div>
                     <Link to={"/"} className="uploadBtn-form">Home</Link>
