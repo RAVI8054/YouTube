@@ -6,15 +6,18 @@ import { MdVideoCall } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import Avatar from "react-avatar";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 
 function Navbar({ setSideNavbarfunc,sideNavbar}) {
     //login profile change with state
   const [userPic, setUserPic] = useState(
     "https://i.pinimg.com/736x/05/78/16/05781612d2cbadf5e423cd0cef59b4f1.jpg"
   );
-  //login page show 
+  //login page show  or hide state
   const [navbarModal, setNavbarModal] = useState(false);
+// navigate  hook for user profile
+const navigate=useNavigate()
+
   function handleClickModal(){
     setNavbarModal(prv=>!prv)
   }
@@ -22,7 +25,11 @@ function Navbar({ setSideNavbarfunc,sideNavbar}) {
   function sideNavbarFunc(){
     setSideNavbarfunc(!sideNavbar)
   }
-
+// function for profile navigate  handle
+ const handleProfile=()=>{
+  navigate("/user/22")
+   setNavbarModal(false)
+ }
 
   return (
     <div className="navbar">
@@ -73,7 +80,7 @@ function Navbar({ setSideNavbarfunc,sideNavbar}) {
         {/* login page modal */}
         {navbarModal &&
           <div className="navbar-modal">
-            <div className="navbar-modal-option">profile</div>
+            <div className="navbar-modal-option" onClick={handleProfile}>profile</div>
             <div className="navbar-modal-option">LogOut</div>
             <div className="navbar-modal-option">Login</div>
           </div>
