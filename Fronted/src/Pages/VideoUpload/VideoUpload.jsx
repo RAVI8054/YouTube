@@ -1,9 +1,21 @@
+import { useState } from "react";
 import "./VideoUpload.css";
 import { PiYoutubeLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 
 function VideoUpload() {
+
+    const [inputField, setInputField] = useState({ "title":"", "description":"", "videoLink":"", "thumbnail":"", "videoType":"" })
+// fuction for handle input form
+    const handleOnChangeInput = (event, name) => {
+        setInputField({
+            ...inputField, [name]: event.target.value
+        })
+    }
+console.log(inputField)
+
+
     return (
         <div className="videoUpload">
             <div className="uploadBox">
@@ -14,16 +26,22 @@ function VideoUpload() {
                 {/* form section */}
                 <div className="uploadForm">
                     <input
+                        onChange={(e) => { handleOnChangeInput(e,"title")}}
+                    value={inputField.title}
                         type="text"
                         placeholder="Video or Title"
                         className="uploadFormInputs"
                     />
                     <input
+                        onChange={(e) => { handleOnChangeInput(e,"description") }}
+                    value={inputField.description}
                         type="text"
                         placeholder="Description"
                         className="uploadFormInputs"
                     /> 
                     <input
+                        onChange={(e) => { handleOnChangeInput(e,"videoType") }}
+                    value={inputField.videoType}
                     type="text"
                     placeholder="Category"
                     className="uploadFormInputs"

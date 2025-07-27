@@ -3,8 +3,14 @@ import { BiLike } from "react-icons/bi";
 import { BiDislike } from "react-icons/bi";
 import Avatar from "react-avatar";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Video() {
+// state handle for commets
+const [message,setMessage]=useState("")
+console.log(message)
+
+
     return (
         <div className="video">
             {/* 1.div for video screen */}
@@ -76,6 +82,8 @@ function Video() {
                         />
                         <div className="addAComment">
                             <input
+                            value={message}
+                            onChange={(e)=>setMessage(e.target.value)}
                                 type="text"
                                 className="addAcommentInput"
                                 placeholder="Add a comment"
