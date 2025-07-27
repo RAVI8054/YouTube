@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Login.css"
 import { PiYoutubeLogo } from "react-icons/pi";
-
+import { Link } from 'react-router-dom';
 
 function Login({setLoginModel}) {
   return (
@@ -24,7 +24,7 @@ function Login({setLoginModel}) {
               {/* for login buttton div */}
               <div className="login_buttons">
                   <div className="login-btn">Login</div>
-                  <div className="login-btn">SignIn</div>
+                  <Link to={"/signup"} className="login-btn" onClick={() => setLoginModel()}>SignUp</Link>
                   <div className="login-btn" onClick={() => setLoginModel()}>Cancel</div>
               </div>
           </div>
