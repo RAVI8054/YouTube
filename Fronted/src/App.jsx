@@ -4,6 +4,7 @@ import Home from "./Pages/home/Home";
 import { Routes, Route } from "react-router-dom";
 import Video from "./Pages/Video/Video";
 import Profile from "./Pages/Profile/Profile";
+import VideoUpload from "./Pages/VideoUpload/VideoUpload";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home sideNavbar={sideNavbar} />} />
         <Route path="/watch/:id" element={<Video />} />
         <Route path="/user/:id" element={<Profile  sideNavbar={sideNavbar} />} />
+        <Route path="/:id/upload" element={<VideoUpload/>} />
       </Routes>
     
     </div>

@@ -7,6 +7,7 @@ import { IoIosNotifications } from "react-icons/io";
 import Avatar from "react-avatar";
 import { useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
+import Login from "../Login/Login";
 
 function Navbar({ setSideNavbarfunc,sideNavbar}) {
     //login profile change with state
@@ -15,6 +16,8 @@ function Navbar({ setSideNavbarfunc,sideNavbar}) {
   );
   //login page show  or hide state
   const [navbarModal, setNavbarModal] = useState(false);
+  // login or logout state
+  const [login,setLogin]=useState(false)
 // navigate  hook for user profile
 const navigate=useNavigate()
 
@@ -30,6 +33,22 @@ const navigate=useNavigate()
   navigate("/user/22")
    setNavbarModal(false)
  }
+// function for set login value false for close login page
+
+const setLoginModel=()=>{
+  setLogin(false)
+}
+
+//  handle funcinailty of login and logout page
+  const onclickOfPopUpOption = (button) => {
+    setNavbarModal(false);
+
+    if (button === "login") {
+      setLogin(true);
+    } else {
+      
+    }
+  }
 
   return (
     <div className="navbar">
@@ -68,7 +87,9 @@ const navigate=useNavigate()
       </div>
       {/* right-navBar-start */}
       <div className="navbar-right">
-        <MdVideoCall size="32px" color="white" />
+      <Link to={"/34/upload"}>
+          <MdVideoCall size="32px" color="white" />
+      </Link>
         <IoIosNotifications size="32px" color="white" />
         
         <Avatar onClick={handleClickModal}
@@ -81,14 +102,17 @@ const navigate=useNavigate()
         {navbarModal &&
           <div className="navbar-modal">
             <div className="navbar-modal-option" onClick={handleProfile}>profile</div>
-            <div className="navbar-modal-option">LogOut</div>
-            <div className="navbar-modal-option">Login</div>
+            <div className="navbar-modal-option" onClick={() => onclickOfPopUpOption("logout")}>LogOut</div>
+            <div className="navbar-modal-option"  onClick={()=>onclickOfPopUpOption("login")}> Login</div>
           </div>
         }
 
       </div>
-
       {/* rightBar-end */}
+      {/* condtional redering of login componet */}
+      {
+        login && <Login setLoginModel={setLoginModel}  />
+      }
     </div>
   );
 }
