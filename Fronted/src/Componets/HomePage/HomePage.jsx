@@ -2,8 +2,19 @@ import "./HomePage.css";
 import Avatar from "react-avatar";
 import { v4 as uuidv4 } from "uuid";
 import {Link} from "react-router-dom"
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function HomePage({ sideNavbar }) {
+  const [data,setData]=useState([])
+    useEffect(() => {
+    axios.get('http://localhost:8000/video/allvideos').then(res=>{
+      console.log(res.data.videos);
+      setData(res.data.videos)
+    })
+ },[])
+
   //options filter Array for body contect catgory
   const options = [
     "Music",
@@ -27,6 +38,7 @@ function HomePage({ sideNavbar }) {
     "Documentary",
   ];
 
+
   return (
     <div className={sideNavbar ? "homepage" : "fullHomePage"}>
       {/* catgory filter div */}
@@ -44,12 +56,16 @@ function HomePage({ sideNavbar }) {
       <div className={sideNavbar ? "home_mainPage":"home_mainPageWithoutLink"}>
 
 {/* video=1 */}
-        <Link to={"/watch/1"} className="youtube_Video">
+
+{
+  data?.map((item,key)=>{
+    return(
+      <Link to={`/watch/${item._id}`} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
               className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
+            src={item.thumbnail}
               alt="Thumbnail"
             />
           </div>
@@ -58,216 +74,23 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBoxProfile">
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
+              src={item?.user?.profilePic}
                 size={32}
                 round={true}
               />
             </div>
 {/* classes for video descriptipons */}
             <div className="youtubeTitleBox_Title">
-            <div className="youtube_videoTitle">User1</div>
-           <div className="youtube_channleName">@2user</div>
-           <div className="youtubeVideo_views">views</div>
+            <div className="youtube_videoTitle">{item?.title}</div>
+           <div className="youtube_channleName">{item?.user?.channelName}</div>
+           <div className="youtubeVideo_views">{item?.like}likes</div>
             </div>
           </div>
         </Link>
-{/* video=2 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-{/* video=3 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
- {/* video=4 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-{/* video=5 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-{/* video=6 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-        {/* video 7 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-        {/* video 8 */}
-        <Link to={"/watch/1"} className="youtube_Video">
-          {/* for video display */}
-          <div className="youtube_thumbnailBox">
-            <img
-              className="youtube_thumbnailPic"
-              src="https://i.ytimg.com/vi/D86VdlVDG_w/hqdefault.jpg?sqp=-oaymwExCOADEI4CSFryq4qpAyMIARUAAIhCGAHwAQH4Af4JgALQBYoCDAgAEAEYciBdKDwwDw==&rs=AOn4CLBAH_afNVvykHqPfvtYR2Rq-zOHMA"
-              alt="Thumbnail"
-            />
-          </div>
-          {/* for video description */}
-          <div className="youtubeTitleBox">
-            <div className="youtubeTitleBoxProfile">
-              <Avatar
-                className="cursor-pointer youtube_thumbnail_profile"
-                src="https://encrypted-tbnLpw2ViqO-S21pxcPbAe4aBOS2xcLQVEg&s"
-                size={32}
-                round={true}
-              />
-            </div>
-            {/* classes for video descriptipons */}
-            <div className="youtubeTitleBox_Title">
-              <div className="youtube_videoTitle">User1</div>
-              <div className="youtube_channleName">@2user</div>
-              <div className="youtubeVideo_views">views</div>
-            </div>
-          </div>
-        </Link>
-
+    )
+  })
+}
+        
       </div>
     </div>
   );
