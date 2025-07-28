@@ -7,7 +7,7 @@ import User from '../Models/User.model.js';
             return res.status(401).json({ error: 'No token, authorization denied' });
         } else {
             try {
-                const decode = jwt.verify(token, "Its_My_Secret_Key");
+                const decode = jwt.verify(token, "JWT_SECRET_KEY");
                 // get user detils and remove password
                 req.user = await User.findById(decode.userId).select('-password');
                 next();
