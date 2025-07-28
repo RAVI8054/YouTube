@@ -24,40 +24,42 @@ export async function uploadVideo(req, res) {
   }
 }
 
-export async function getAllVideo(req,res) {
-    try {
-        //populate("arg=ref of collcetion name,arg2-field names which want")
-        const videos = await Video.find().populate("user",
-            "channelName profilePic userName createdAt")
-        res.status(201).json({success:"true","videos":videos})
-
-    } catch (error) {
-        res.status(500).json({ error: "Server error" });
-    }
+export async function getAllVideo(req, res) {
+  try {
+    //populate("arg=ref of collcetion name,arg2-field names which want")
+    const videos = await Video.find().populate(
+      "user",
+      "channelName profilePic userName createdAt"
+    );
+    res.status(200).json({ success: "true", videos: videos });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
 }
 
-
-export async function  getVideoById(req,res) {
-    try {
-        let {id}=req.params
+export async function getVideoById(req, res) {
+  try {
+    let { id } = req.params;
     //   console.log(id);
-        const video = await Video.findById(id).populate("user",
-            "channelName profilePic userName createdAt")
-res.status(200).json({success:"true","videos":video})
-
-    } catch (error) {
-        res.status(500).json({ error: "Server error" });
-    }
+    const video = await Video.findById(id).populate(
+      "user",
+      "channelName profilePic userName createdAt"
+    );
+    res.status(200).json({ success: "true", videos: video });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
 }
 
-export async function getAllVideosByUserId(req,res) {
-    try {
-       const {userId}=req.params;
-        const video = await Video.find({ user: userId }).populate("user",
-            "channelName profilePic userName createdAt");
-        res.status(200).json({ success: "true", "video": video })
-
-    } catch (error) {
-        res.status(500).json({ error: "Server error" });
-    }
+export async function getAllVideosByUserId(req, res) {
+  try {
+    const { userId } = req.params;
+    const video = await Video.find({ user: userId }).populate(
+      "user",
+      "channelName profilePic userName createdAt"
+    );
+    res.status(200).json({ success: "true", video: video });
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
 }
