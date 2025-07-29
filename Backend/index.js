@@ -18,8 +18,10 @@ mongoose.connect('mongodb+srv://ravimrvr:EVuFT85SmywxcBnh@youtube.lksyi2l.mongod
     });
 
 // for cookies user port must be define
+
+
 app.use(cors({
-    origin: "http://localhost:5174",
+    origin: "http://localhost:5173",
     credentials: true
 }))
 //controllers

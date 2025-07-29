@@ -60,7 +60,7 @@ function HomePage({ sideNavbar }) {
 {
   data?.map((item,key)=>{
     return(
-      <Link to={`/watch/${item._id}`} className="youtube_Video">
+      <Link to={`/watch/${item._id}`} key={uuidv4()} className="youtube_Video">
           {/* for video display */}
           <div className="youtube_thumbnailBox">
             <img
@@ -72,6 +72,7 @@ function HomePage({ sideNavbar }) {
           {/* for video description */}
           <div className="youtubeTitleBox">
             <div className="youtubeTitleBoxProfile">
+            {/* channel  user profile image */}
               <Avatar
                 className="cursor-pointer youtube_thumbnail_profile"
               src={item?.user?.profilePic}
@@ -83,7 +84,7 @@ function HomePage({ sideNavbar }) {
             <div className="youtubeTitleBox_Title">
             <div className="youtube_videoTitle">{item?.title}</div>
            <div className="youtube_channleName">{item?.user?.channelName}</div>
-           <div className="youtubeVideo_views">{item?.like}likes</div>
+           <div className="youtubeVideo_views">50k views</div>
             </div>
           </div>
         </Link>

@@ -56,7 +56,7 @@ export async function getAllVideosByUserId(req, res) {
     const { userId } = req.params;
     const video = await Video.find({ user: userId }).populate(
       "user",
-      "channelName profilePic userName createdAt"
+      "channelName profilePic userName createdAt about"
     );
     res.status(200).json({ success: "true", video: video });
   } catch (error) {
