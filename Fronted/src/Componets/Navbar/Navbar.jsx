@@ -92,12 +92,19 @@ const setLoginModel=()=>{
       </Link>
         <IoIosNotifications size="32px" color="white" />
         
-        <Avatar onClick={handleClickModal}
-          className="cursor-pointer"
-          src={userPic}
-          size={32}
-          round={true}
-        />
+        <div onClick={handleClickModal} className="flex items-center">
+          <Avatar 
+            className="cursor-pointer"
+            src={userPic}
+            size={32}
+            round={true}
+          />
+          <p className="text-blue-500 font-bold border border-blue-500 rounded text-[5px] leading-[28px]">
+            Sign in
+          </p>
+
+
+        </div>
         {/* login page modal */}
         {navbarModal &&
           <div className="navbar-modal">

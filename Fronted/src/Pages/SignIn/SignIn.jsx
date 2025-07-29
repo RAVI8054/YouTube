@@ -1,13 +1,15 @@
 import "./SignIn.css";
 import { PiYoutubeLogo } from "react-icons/pi";
 import Avatar from "react-avatar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 
 
 function SignIn() {
+  // navigate to home  after signup user
+  const navigate = useNavigate()
 // state for progress barr
 const [progress,setProgress] = useState(false)
 
@@ -62,6 +64,7 @@ const [progress,setProgress] = useState(false)
       // console.log(res);
       toast.success(res.data.message)
       setProgress(false)
+      navigate('/')
       
     }).catch(err=>{
       // console.log(err)
