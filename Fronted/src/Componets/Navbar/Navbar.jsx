@@ -118,27 +118,9 @@ const setLoginModel=()=>{
       </div>
       {/* right-navBar-start */}
       <div className="navbar-right">
-
-
-        <div onClick={() => {
-          if (isLogedIn) {
-            navigate("/34/upload");
-          } else {
-            toast.warn("Please login first", {
-              position: "top-right",
-              autoClose: 3000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            });
-          }
-        }}>
-          <MdVideoCall size="32px" color="white" style={{ cursor: "pointer" }} />
-        </div>
-
-      
+      <Link to={"/34/upload"}>
+          <MdVideoCall size="32px" color="white" />
+      </Link>
         <IoIosNotifications size="32px" color="white" />
         
         {/* <div onClick={handleClickModal} className="flex items-center"> */}
@@ -169,7 +151,6 @@ const setLoginModel=()=>{
       {
         login && <Login setLoginModel={setLoginModel}  />
       }
-      <ToastContainer />
     </div>
   );
 }

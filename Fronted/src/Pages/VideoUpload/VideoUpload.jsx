@@ -46,6 +46,16 @@ useEffect(()=>{
 navigate('/')
     }
 },[])
+
+// for handle video submit 
+const handleSubmitFunc=async()=>{
+    await axios.post('http://localhost:8000/video/video',inputField,{withCredentials:true
+    }).then((resp)=>{
+        console.log(resp);       
+    }).catch(err=>{
+        console.log(err)
+    })
+}
     return (
         <div className="videoUpload">
             <div className="uploadBox">
@@ -88,7 +98,7 @@ navigate('/')
                 {/* upload btn */}
 
                 <div className="uploadBtns">
-                    <div className="uploadBtn-form">Upload</div>
+                    <div className="uploadBtn-form" onClick={handleSubmitFunc}>Upload</div>
                     <Link to={"/"} className="uploadBtn-form">Home</Link>
 
                 </div>
