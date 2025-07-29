@@ -62,7 +62,7 @@ export async function signIn(req, res) {
 
             // Set token in HTTP-only cookie
             res.cookie('token', token, cookieOptions);
-            res.status(201).json({ message: 'Logged successfully', success: "true",token });
+            res.status(201).json({ message: 'Logged successfully', success: "true",token,user });
 
         } else {
             res.status(400).json({ error: 'invalid credentials' })

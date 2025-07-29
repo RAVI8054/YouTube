@@ -5,19 +5,33 @@ import { TiMicrophone } from "react-icons/ti";
 import { MdVideoCall } from "react-icons/md";
 import { IoIosNotifications } from "react-icons/io";
 import Avatar from "react-avatar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import Login from "../Login/Login";
 
 function Navbar({ setSideNavbarfunc,sideNavbar}) {
-    //login profile change with state
+  //login profile change with state
   const [userPic, setUserPic] = useState(
     "https://i.pinimg.com/736x/05/78/16/05781612d2cbadf5e423cd0cef59b4f1.jpg"
   );
   //login page show  or hide state
   const [navbarModal, setNavbarModal] = useState(false);
-  // login or logout state
-  const [login,setLogin]=useState(false)
+  // login or logout page remove state
+  const [login, setLogin] = useState(false)
+
+  // for  sign in button chelk login or not user
+  const [isLogedIn,setIsLogedIn]=useState(false)
+
+// for sigin pic after login contional rendering
+useEffect(()=>{
+  let userProfilePic = localStorage.getItem("userProfilePic")
+  setIsLogedIn(localStorage.getItem("userId")!==null?true:false)
+  if(userProfilePic!==null){
+    setUserPic(userProfilePic)
+  }
+
+})
+
 // navigate  hook for user profile
 const navigate=useNavigate()
 
@@ -30,7 +44,8 @@ const navigate=useNavigate()
   }
 // function for profile navigate  handle
  const handleProfile=()=>{
-  navigate("/user/22")
+  const userId=localStorage.getItem("userId")
+  navigate(`/user/${userId}`)
    setNavbarModal(false)
  }
 // function for set login value false for close login page
@@ -46,10 +61,24 @@ const setLoginModel=()=>{
     if (button === "login") {
       setLogin(true);
     } else {
-      
+      localStorage.clear()
+      getLogoutFun()
+      setTimeout(() => {
+        navigate('/')
+        window.location.reload()
+      }, 1000);
     }
   }
 
+  // for logout api function
+  async function getLogoutFun() {
+    axios.post('http://localhost:8000/auth/logout',{},{withCrendentials:true}).then((res)=>{
+      console.log("logout");
+    }).catch(err=>{
+      console.log(err);
+      
+    })
+  }
   return (
     <div className="navbar">
       {/* navbar left */}
@@ -92,25 +121,25 @@ const setLoginModel=()=>{
       </Link>
         <IoIosNotifications size="32px" color="white" />
         
-        <div onClick={handleClickModal} className="flex items-center">
+        {/* <div onClick={handleClickModal} className="flex items-center"> */}
           <Avatar 
+            onClick={handleClickModal}
             className="cursor-pointer"
             src={userPic}
             size={32}
             round={true}
           />
-          <p className="text-blue-500 font-bold border border-blue-500 rounded text-[5px] leading-[28px]">
-            Sign in
-          </p>
-
-
-        </div>
+        {!isLogedIn && <div className="text-white" onClick={handleClickModal}>sign in </div>}
+        {/* </div> */}
         {/* login page modal */}
         {navbarModal &&
           <div className="navbar-modal">
-            <div className="navbar-modal-option" onClick={handleProfile}>profile</div>
-            <div className="navbar-modal-option" onClick={() => onclickOfPopUpOption("logout")}>LogOut</div>
-            <div className="navbar-modal-option"  onClick={()=>onclickOfPopUpOption("login")}> Login</div>
+            {isLogedIn && <div className="navbar-modal-option" onClick={handleProfile}>profile</div>}
+           
+            {isLogedIn && <div className="navbar-modal-option" onClick={() => onclickOfPopUpOption("logout")}>LogOut</div>}
+          
+            {!isLogedIn && <div className="navbar-modal-option"  onClick={()=>onclickOfPopUpOption("login")}> Login</div>}
+          
           </div>
         }
 

@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./Login.css";
 import { PiYoutubeLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import axios from 'axios'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function Login({ setLoginModel }) {
   const [loginField,setLoginField]= useState({ userName: "", password: "" });
@@ -12,8 +15,22 @@ function Login({ setLoginModel }) {
             ...loginField,[name]:event.target.value
         })
     }
+// for login handle function
+ async function handleLoginFun(){
+   axios.post("http://localhost:8000/auth/login",loginField).then((resp)=>{
+    // console.log(resp)
+    localStorage.setItem("token",resp.data.token)
+    localStorage.setItem('userId',resp.data.user._id)
+    localStorage.setItem('userProfilePic',resp.data.user.profilePic)
+    //  console.log(resp.data.token);
 
-
+    window.location.reload()
+   }).catch(err=>{
+    console.log(err);
+    toast.error("invalid Credentials")
+    
+   })
+  }
 
   return (
     <div className="login">
@@ -46,7 +63,7 @@ function Login({ setLoginModel }) {
 
         {/* for login buttton div */}
         <div className="login_buttons">
-          <div className="login-btn">Login</div>
+          <button className="login-btn" onClick={handleLoginFun}>Login</button>
           <Link
             to={"/signup"}
             className="login-btn"
@@ -54,11 +71,11 @@ function Login({ setLoginModel }) {
           >
             SignUp
           </Link>
-          <div className="login-btn" onClick={() => setLoginModel()}>
-            Cancel
-          </div>
+          <button className="login-btn" onClick={() => setLoginModel()}>
+           Cancel</button>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }
