@@ -4,8 +4,13 @@ import Avatar from "react-avatar";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 function SignIn() {
+// state for progress barr
+const [progress,setProgress] = useState(false)
+
   // link for image set cloudary
   const [uploadedImageUrl, setUploadedImageUrl] = useState(
     "https://images.unsplash.com/photo-1753114767610-75bc913c8423?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -24,7 +29,6 @@ function SignIn() {
       [name]: event.target.value,
     });
   };
-
   console.log(singUpFiled);
   // function for upload image
   const uploadImage = async (e) => {
@@ -34,10 +38,12 @@ function SignIn() {
     data.append("file", files[0]);
     data.append("upload_preset", "youtube-clone");
     try {
+      setProgress(true)
       const response = await axios.post(
         "https://api.cloudinary.com/v1_1/dlgorbunu/image/upload",
         data
       );
+      setProgress(false)
       // console.log(response)
       const imageUrl = response.data.url;
       setUploadedImageUrl(imageUrl);
@@ -49,6 +55,21 @@ function SignIn() {
       console.log(error);
     }
   };
+  // for signup buttton function store data in db
+  async function handlesignup(){
+    setProgress(true)
+    axios.post(`http://localhost:8000/auth/signUp`,singUpFiled).then((res)=>{
+      // console.log(res);
+      toast.success(res.data.message)
+      setProgress(false)
+      
+    }).catch(err=>{
+      // console.log(err)
+      setProgress(false)
+      toast.error(err)
+    })
+  
+  }
 
   return (
     <div className="signUp">
@@ -110,13 +131,23 @@ function SignIn() {
           </div>
           {/* div for button and form submit */}
           <div className="signUpBtns">
-            <div className="signUpBtn">SignUp</div>
+            <div className="signUpBtn" onClick={handlesignup}>SignUp</div>
             <Link to={"/"} className="signUpBtn">
               Home Page
             </Link>
           </div>
+
+          {/* loder image */}
+          {
+            progress && <div>
+          <h1 className=" text-2xl bg-amber-500 w-full rounded-md" >please wait signup ......
+          </h1></div>
+          }
+          
+
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }

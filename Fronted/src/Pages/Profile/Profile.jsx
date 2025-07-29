@@ -18,7 +18,7 @@ function Profile({ sideNavbar }) {
     await axios
       .get(` http://localhost:8000/video/${id}/Channel`)
       .then((Response) => {
-        console.log(Response);
+        // console.log(Response);
         setData(Response.data.video);
         setUser(Response.data.video[0]?.user);
       })
@@ -41,7 +41,7 @@ function Profile({ sideNavbar }) {
           {/* image section for user profile */}
           <div className="profile_top_section_profile">
             <img
-              src="https://images.unsplash.com/photo-1753114767610-75bc913c8423?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={user?.profilePic}
               alt=""
               className="profile_top_section_img"
             />
