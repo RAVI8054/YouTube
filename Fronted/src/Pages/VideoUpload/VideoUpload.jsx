@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./VideoUpload.css";
 import { PiYoutubeLogo } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 
 
 function VideoUpload() {
+    const navigate=useNavigate()
 
     const [inputField, setInputField] = useState({ "title": "", "description": "", "videoLink": "", "thumbnail": "", "videoType": "" })
     // fuction for handle input form
@@ -39,7 +40,12 @@ function VideoUpload() {
     };
     console.log(inputField)
 
-
+useEffect(()=>{
+    let isLogin=localStorage.getItem("userId");
+    if(isLogin!==null){
+navigate('/')
+    }
+},[])
     return (
         <div className="videoUpload">
             <div className="uploadBox">

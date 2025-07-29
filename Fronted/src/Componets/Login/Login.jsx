@@ -4,6 +4,7 @@ import { PiYoutubeLogo } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login({ setLoginModel }) {

@@ -8,6 +8,8 @@ import Avatar from "react-avatar";
 import { useEffect, useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import Login from "../Login/Login";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function Navbar({ setSideNavbarfunc,sideNavbar}) {
   //login profile change with state
@@ -116,9 +118,27 @@ const setLoginModel=()=>{
       </div>
       {/* right-navBar-start */}
       <div className="navbar-right">
-      <Link to={"/34/upload"}>
-          <MdVideoCall size="32px" color="white" />
-      </Link>
+
+
+        <div onClick={() => {
+          if (isLogedIn) {
+            navigate("/34/upload");
+          } else {
+            toast.warn("Please login first", {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
+        }}>
+          <MdVideoCall size="32px" color="white" style={{ cursor: "pointer" }} />
+        </div>
+
+      
         <IoIosNotifications size="32px" color="white" />
         
         {/* <div onClick={handleClickModal} className="flex items-center"> */}
@@ -149,6 +169,7 @@ const setLoginModel=()=>{
       {
         login && <Login setLoginModel={setLoginModel}  />
       }
+      <ToastContainer />
     </div>
   );
 }
