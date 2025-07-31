@@ -118,12 +118,14 @@ const setLoginModel=()=>{
       </div>
       {/* right-navBar-start */}
       <div className="navbar-right">
-      <Link to={"/34/upload"}>
+
+      <Link to={`/34/upload`}>
           <MdVideoCall size="32px" color="white" />
       </Link>
-        <IoIosNotifications size="32px" color="white" />
-        
-        {/* <div onClick={handleClickModal} className="flex items-center"> */}
+
+        <div>  <IoIosNotifications size="32px" color="white" />
+        </div>
+        <div  className="flex items-center"> 
           <Avatar 
             onClick={handleClickModal}
             className="cursor-pointer"
@@ -132,7 +134,7 @@ const setLoginModel=()=>{
             round={true}
           />
         {!isLogedIn && <div className="text-white" onClick={handleClickModal}>sign in </div>}
-        {/* </div> */}
+        </div>
         {/* login page modal */}
         {navbarModal &&
           <div className="navbar-modal">

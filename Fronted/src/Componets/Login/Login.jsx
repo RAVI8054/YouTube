@@ -18,7 +18,7 @@ function Login({ setLoginModel }) {
     }
 // for login handle function
  async function handleLoginFun(){
-   axios.post("http://localhost:8000/auth/login",loginField).then((resp)=>{
+   axios.post("http://localhost:8000/auth/login",loginField,{withCredentials:true}).then((resp)=>{
     // console.log(resp)
     localStorage.setItem("token",resp.data.token)
     localStorage.setItem('userId',resp.data.user._id)

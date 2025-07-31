@@ -6,7 +6,7 @@ import axios from 'axios'
 
 
 function VideoUpload() {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const [inputField, setInputField] = useState({ "title": "", "description": "", "videoLink": "", "thumbnail": "", "videoType": "" })
     // fuction for handle input form
@@ -40,22 +40,24 @@ function VideoUpload() {
     };
     console.log(inputField)
 
-useEffect(()=>{
-    let isLogin=localStorage.getItem("userId");
-    if(isLogin!==null){
-navigate('/')
-    }
-},[])
+    useEffect(() => {
+        let isLogin = localStorage.getItem("userId");
+        if (isLogin === null) {
+            navigate('/')
+        }
+    }, [])
 
-// for handle video submit 
-const handleSubmitFunc=async()=>{
-    await axios.post('http://localhost:8000/video/video',inputField,{withCredentials:true
-    }).then((resp)=>{
-        console.log(resp);       
-    }).catch(err=>{
-        console.log(err)
-    })
-}
+    // for handle video submit 
+    const handleSubmitFunc = async () => {
+        await axios.post('http://localhost:8000/video/video', inputField, {
+            withCredentials: true
+        }).then((resp) => {
+            console.log(resp);
+            navigate('/')
+        }).catch(err => {
+            console.log(err)
+        })
+    }
     return (
         <div className="videoUpload">
             <div className="uploadBox">
