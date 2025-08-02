@@ -1,19 +1,17 @@
 # 🎥 YouTube Clone – Frontend
  A responsive YouTube-style frontend built with React + Vite, designed for seamless browsing, video playback, and user interactions. It provides a responsive, user-friendly interface for browsing videos, managing channels, and interacting with content, mimicking core YouTube functionalities like video playback, commenting, and filtering.
 
+---
 ## 🧩 Table of Contents
--🚀 Features
--⚙️ Tech Stack
--🗂️ Folder Structure
--🧪 Setup Instructions
--💡 Usage
--🛠️ Performance Optimization
-
-
+- 🚀 Features
+- ⚙️ Tech Stack
+- 🗂️ Folder Structure
+- 🧪 Setup Instructions
+- 💡 Usage
+- 🛠️ Performance Optimization
 ---
 
 ## 🚀 Features
-
 ### 🏠 Homepage UI:
 - YouTube-style header with search and profile.
 - Toggleable sidebar for navigation.
@@ -42,15 +40,15 @@
 ---
 
 ⚙️ Tech Stack
--⚛️ React
--🚀 Vite
--🔄 React Router
--🎨 Material UI
--🔥 Axios
--💬 React Toastify
--🎯 Custom Hooks
--🧠 Lazy Loading + Code Splitting
--🖌️ CSS Modules
+- ⚛️ React
+ - 🚀 Vite
+ - 🔄 React Router
+ - 🎨 Material UI
+ - 🔥 Axios
+ - 💬 React Toastify
+ - 🎯 Custom Hooks
+ - 🧠 Lazy Loading + Code Splitting
+ - 🖌️ CSS Modules
 
 ---
 ## 🗂️ Folder Structure
