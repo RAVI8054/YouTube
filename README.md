@@ -2,6 +2,7 @@
 A full-stack YouTube-style application built with the MERN stack (MongoDB, Express, React, Node.js). It supports features like video uploads, channels, user authentication, comments, and a responsive UI with video playback.
 
 ---
+---
 
 ## ⚙️ Tech Stack
 ### Fronted 
@@ -18,7 +19,8 @@ A full-stack YouTube-style application built with the MERN stack (MongoDB, Expre
 ### 📌 More deatils fronted go:
   - [🔗  Fronted README](https://github.com/RAVI8054/YouTube/blob/main/Fronted/README.md)
 
-
+---
+    
 ### backend
  - 🟢 Node.js: Runtime environment for server-side JavaScript.
  - ⚫ Express.js: Web framework for building RESTful APIs.
@@ -31,6 +33,7 @@ A full-stack YouTube-style application built with the MERN stack (MongoDB, Expre
 ### 📌 More Detials Backed go:
  - [🔗   Backed README](https://github.com/RAVI8054/YouTube/blob/main/Backend/README.md)
 
+---
 ---
 
 ## 💡 Usage
@@ -88,6 +91,7 @@ npm install
   npm start
   ```
   Server runs on: http://localhost:8080
+
 
 
 
