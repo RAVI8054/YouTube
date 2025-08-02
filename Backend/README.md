@@ -1,47 +1,46 @@
 # 🎬 YouTube Clone - Backend
 Backend for a YouTube-style app built with Node.js, Express, and MongoDB (MERN stack). It offers a RESTful API for authentication, channel/video management, and comments.
 
-## Table of Contents
+## 🧩Table of Contents
 
-- Features
-- Technologies Used
-- Folder Structure
-- API Endpoints
-- Setup Instructions
+- 🚀 Features
+- 🧰 Technologies Used
+- 🗂️ Folder Structure
+- 🔗 API Endpoints
+- ⚙️ Setup Instructions
 
-## Features
--Authentication
+## 🚀 Features
+- 🔐 Authentication
  -Sign up / login with JWT
  -Password hashing via bcrypt
  -Protected routes for authenticated users (e.g., channel creation, video uploads).
 
-- Channel Management:
+- 📺 Channel Management
   - Create and fetch channel details (name, description, banner, videos).
   - Associate channels with authenticated users.
 
--Video Management
+- 🎥 Video Management
  -Upload/update/delete video metadata
  -Cloudinary for media storage
  -Search & filter videos
 
--Comment System
+- 💬 Comment System
  -Add/edit/delete comments
  -Authenticated users only
 
--MongoDB
+- 🍃 MongoDB Integration
  -Users, Channels, Videos, Comments collections
 
 ## 🧰 Tech Stack
--Node.js
--Express.js
--MongoDB + Mongoose
--JWT (auth)
--bcryptjs
--Cloudinary (media storage)
--Nodemon (dev server)
+- 🟢 Node.js: Runtime environment for server-side JavaScript.
+- ⚫ Express.js: Web framework for building RESTful APIs.
+- 🍃 MongoDB + 🟥 Mongoose: NoSQL database and ORM for data storage and modeling.
+- 🔐 JWT (Auth):
+- 🔑 bcryptjs:Password hashing for user security.
+- ☁️ Cloudinary (Media Storage)
+- 🔁 Nodemon: Development tool for auto-restarting the server.
 
-
-## Folder Structure
+## 🗂️ Folder Structure
 
 ```bash
 Fronted/
@@ -97,8 +96,8 @@ Fronted/
 ### 🔽 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/youtube-clone-backend.git
-cd youtube-clone-
+git clone https://github.com/RAVI8054/YouTube.git
+cd youtube/Backend
 ```
 
 ### 📦 2. Install Dependencies
@@ -111,3 +110,4 @@ npm install
   ```
   Server runs on: http://localhost:8080
 
+ ```

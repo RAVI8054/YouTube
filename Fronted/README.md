@@ -1,57 +1,59 @@
-# YouTube Clone - Frontend
+# 🎥 YouTube Clone – Frontend
+ A responsive YouTube-style frontend built with React + Vite, designed for seamless browsing, video playback, and user interactions. It provides a responsive, user-friendly interface for browsing videos, managing channels, and interacting with content, mimicking core YouTube functionalities like video playback, commenting, and filtering.
 
-This is the frontend of a YouTube clone, built with React as part of a MERN stack capstone project. It provides a responsive, user-friendly interface for browsing videos, managing channels, and interacting with content, mimicking core YouTube functionalities like video playback, commenting, and filtering.
+## 🧩 Table of Contents
+-🚀 Features
+-⚙️ Tech Stack
+-🗂️ Folder Structure
+-🧪 Setup Instructions
+-💡 Usage
+-🛠️ Performance Optimization
 
-## Table of Contents
-- Features
-- Technologies Used
-- Folder Structure
-- Setup Instructions
-- Usage
 
 ---
 
-## Features
+## 🚀 Features
 
-### Homepage UI:
+### 🏠 Homepage UI:
 - YouTube-style header with search and profile.
 - Toggleable sidebar for navigation.
 - Filter videos by category (e.g., Entertainment).
 - Grid layout of video cards.
 
-### User Authentication:
+### 🔐 User Authentication:
 - Signup/Login with JWT auth.
 - Username displayed after login.
 
-### Video Player:
+### 📺 Video Playback:
 - Play videos from Cloudinary or YouTube.
 - Like/dislike + comments (for logged-in users).
 
-### Channel Page:
+### 📡 Channel Page:
 - Authenticated users can create channels.
 - `/my-channel` to edit/delete uploads.
 
-### Search & Filter:
+### 🔍 Search & Filter:
 - Search by title.
 - Filter using category buttons.
 
-### Responsive:
+### 📱 Responsive Design:
 - Mobile, tablet, and desktop friendly.
 
 ---
 
-## Technologies Used
-- React
-- React Router
-- Material-UI
-- Axios
-- React Toastify
-- Vite
-- CSS
+⚙️ Tech Stack
+-⚛️ React
+-🚀 Vite
+-🔄 React Router
+-🎨 Material UI
+-🔥 Axios
+-💬 React Toastify
+-🎯 Custom Hooks
+-🧠 Lazy Loading + Code Splitting
+-🖌️ CSS Modules
 
 ---
-
-## Folder Structure
+## 🗂️ Folder Structure
 
 ```bash
 Fronted/
@@ -106,28 +108,44 @@ Fronted/
 
 ### Prerequisites
 - Node.js and npm
-- Backend running at: http://localhost:8000
+- Backend running at: http://localhost:8080
 
 ### Steps
 
-```bash
-cd Fronted
+## 🚀 Getting Started
+
+### 🔽 1. Clone the Repository
+```
+git clone https://github.com/RAVI8054/YouTube.git
+cd youtube/frontend
+
+```
+### 📦 2. Install Dependencies
+```
 npm install
-npm run dev
 ```
 
+ ### ▶️ 3. Run the development  Server
+```
+npm run dev
+```
 Open [http://localhost:5173](http://localhost:5173)
 
 ---
-
-## Usage
+## 💡 Usage
 
 - **Home**: Video grid + sidebar + category filters
+ -Home page with video feed
 - **Sign up / Log in**: `/signup` or `/login`
-- **Create Channel**: `/create-channel`
-- **Upload Video**: `/upload-video`
+ -Create a new account         
+- **Create Channel**: `/create-channel` 
+ -Create your own channel  
+- **Upload Video**: `/upload-video` 
+ -Upload video to your channel
 - **Watch Video**: `/video/:id`
+ -Watch a specific video  
 - **My Channel**: `/my-channel`
+ -Manage your uploaded videos
 - **Filter**: Use category buttons on home
 
 ---
