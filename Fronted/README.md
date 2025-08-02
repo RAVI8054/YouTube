@@ -61,12 +61,11 @@ Fronted/
 ├── src/
 │   ├── components/
 │   │   ├── Navbar/
-│   │   │   ├── NavBar/
-│   │   │   │   ├── NavBar.js
-│   │   │   │   └── NavBar.css
-│   │   │   └── SideBar/
-│   │   │       ├── Sidebar.js
-│   │   │       └── Sidebar.css
+│   │   │      ├── NavBar.js
+│   │   │      └── NavBar.css
+│   │   ├── SideBar/
+│   │   │      ├── Sidebar.js
+│   │   │      └── Sidebar.css
 │   ├── Pages/
 │   │   ├── CreateChannel/
 │   │   │   └── CreateChannel.js
@@ -112,7 +111,7 @@ Fronted/
 ### Steps
 
 ```bash
-cd client
+cd Fronted
 npm install
 npm run dev
 ```
@@ -132,10 +131,4 @@ Open [http://localhost:5173](http://localhost:5173)
 - **Filter**: Use category buttons on home
 
 ---
-
-## Responsive Design
-
-- **Mobile**: Sidebar overlays content with hamburger
-- **Tablet/Desktop**: Sidebar shifts layout for clarity
-
 

@@ -1,7 +1,6 @@
 // middleware/auth.js
 import jwt from 'jsonwebtoken';
 import User from '../models/User.Model.js';
-import { JWT_SECRET } from '../config.js';
 
 const auth = async (req, res, next) => {
   try {

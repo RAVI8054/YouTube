@@ -2,7 +2,6 @@
 import User from '../models/User.Model.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from '../config.js';
 
 // Cookie configuration for storing the JWT token
 const cookieOptions = {

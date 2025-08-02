@@ -43,7 +43,6 @@ This is the backend of a YouTube clone, built with Node.js, Express, and MongoDB
 - Bcryptjs: Password hashing for user security.
 - Cloudinary: Cloud service for storing video and image files.
 - Nodemon: Development tool for auto-restarting the server.
-- Dotenv: Manages environment variables.
 
 ## Folder Structure
 
@@ -54,8 +53,6 @@ Fronted/
 │   ├── channelController.js   # Channel creation and retrieval
 │   ├── commentController.js   # Comment management
 │   └── videoController.js     # Video management (upload, fetch, update, delete)
-├── db/                        # Database connection
-│   └── conn.js                # MongoDB connection setup
 ├── Middleware/                # Custom middleware
 │   └── auth.js                # JWT authentication middleware
 ├── models/                    # Mongoose schemas
@@ -70,8 +67,7 @@ Fronted/
 │   └── video.Route.js         # Video-related routes
 ├── config.js                  # Configuration (e.g., PORT, JWT_SECRET)
 ├── package.json               # Dependencies and scripts
-├── server.js                  # Main server entry point
-├── .env                       # Environment variables (not committed)
+├── index.js                  # Main server entry point, Database connection
 └── README.md                  # Backend documentation
 ```
 
@@ -82,33 +78,6 @@ Fronted/
 - Node.js and npm (Node Package Manager).
 - MongoDB (running locally or via MongoDB Atlas).
 - Cloudinary account for media storage (signup at cloudinary.com).
-
-### Installation Steps
-
-```bash
-cd server
-npm install
-```
-
-### Configure Environment Variables
-
-Create a `.env` file in the `server` directory with the following:
-```
-Replace placeholders with your MongoDB URI, JWT secret, and Cloudinary credentials.
-
-### Start the Server
-
-```bash
-npm start
-```
-
-The server will run on http://localhost:8000.
-
-## Notes
-
-- Ensure MongoDB is running before starting the server.
-- The backend must be running for the frontend to access API endpoints.
-- Use a tool like Postman to test API endpoints during development.
 
 ## API Endpoints
 
@@ -176,3 +145,15 @@ The server will run on http://localhost:8000.
   - Fetch comments for a video.
   - Response: `[ { "commentId": "string", "text": "string", "userId": "string" } ]`
 
+### Installation Steps
+
+```bash
+cd Backend
+npm install
+```
+### Start the Server
+
+```bash
+npm start
+```
+The server will run on http://localhost:8080.
