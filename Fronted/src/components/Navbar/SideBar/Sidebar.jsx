@@ -14,11 +14,9 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
   const subscriptions = [
-    { name: "Aaj Tak", img: "https://www.bizasialive.com/wp-content/uploads/2021/01/aajtak001.jpg" },
-    { name: "NDTV", img: "https://logowik.com/content/uploads/images/ndtv9182.logowik.com.webp" },
-    { name: "BBC News", img: "https://download.logo.wine/logo/BBC_News/BBC_News-Logo.wine.png" },
-    { name: "Tech Burner", img: "https://tse3.mm.bing.net/th?id=OIP.aD2evi54ahP1J63aJ_vKSQHaHa&pid=Api&P=0&h=180" },
-    { name: "MrBeast", img: "https://up.yimg.com/ib/th?id=OIP.F547algTHyaU4ftbzU25OgHaEo&pid=Api&rs=1&c=1&qlt=95&w=169&h=106" }
+    { name: "internshala", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754116823/xmmarbsc4hgrkndnly0k.jpg" },
+    { name: "foody", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754117069/z2f0esicd15mrnzbke3q.jpg" },
+    { name: "Heart News", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754117051/baascssuhe7772tvdnri.jpg" },
   ];
 
   return (
