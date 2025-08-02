@@ -1,0 +1,225 @@
+/* Base homepage content styling */
+*{
+  overflow-x: auto;
+}
+
+.homepage-content {
+  background-color: #fff;
+  padding: 16px;
+  width: 100%;
+  padding-top: 50px;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 100;
+}
+
+
+
+
+/* Base top bar styling */
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 12px;
+  padding: 10px 0;
+  scrollbar-width: none;
+}
+
+.top-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* When sidebar is shown — adjust margin */
+.top-bar.with_sidebar {
+  margin-left: 0px; 
+}
+
+
+.top-bar.without_sidebar {
+  margin-left: 60px;
+}
+
+
+.top-icon {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  background-color: #f1f1f1;
+  border-radius: 18px;
+  font-size: 14px;
+  color: #0f0f0f;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.top-icon:hover {
+  background-color: #e0e0e0;
+}
+
+.top-icon.active {
+  background-color: #065fd4;
+  color: white;
+  border-color: #065fd4;
+}
+
+
+/* ------------------Video grid styling-------------------- */
+/* Video grid styling */
+
+.show-videos {
+  display: grid;
+  gap: 16px;
+  overflow-x: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ 
+}
+
+.show-videos.with_sidebar {
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+
+.show-videos.without_sidebar {
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 60px;
+  gap: 50px;
+
+
+}
+.video-box.without_sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 340px;
+  
+}
+.video-box.with_sidebar {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 320px;
+  
+}
+
+/* Thumbnail box styling */
+.thumbnail-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+}
+
+.thumbnail-box img {
+  width: 100%;
+  background-color: #606060;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Video duration styling */
+.thumbnail-box .time {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Video details styling */
+.video_detail_box {
+  padding: 8px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.video_detail_box .img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.video_detail_box .title {
+  font-size: 16px;
+  color: #0f0f0f;
+  margin: 0;
+}
+
+.video_detail_box .channel-name {
+  font-size: 14px;
+  color: #606060;
+  margin: 0;
+}
+
+.video_detail_box .views {
+  font-size: 14px;
+  color: #606060;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1025px) {
+  .top-bar.with_sidebar {
+    margin-left: 0; 
+  }
+
+  .show-videos {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr) !important;
+    overflow: visible;
+
+
+  }
+  .video-box.without_sidebar{
+    display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 320px;
+    
+  }
+}
+
+@media (max-width: 1155px) {
+   .video-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+
+  }
+
+  .show-videos {        
+        grid-template-columns: repeat(2, 1fr) !important; /* Ensures two videos per row */       
+        margin-left: 0 !important;
+  }
+  .top-bar{
+    margin-left: 0 !important;
+  }
+  .video-box{
+    width: 90% !important;
+  }
+ 
+ 
+}
+
+@media (max-width: 480px) {
+  .show-videos {
+    display: flex;
+    margin-left: 0px !important;
+    
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+  .video-box{
+    width: 90% !important;
+  }
+  
+}

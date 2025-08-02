@@ -1,40 +1,33 @@
-import express from 'express'
-import cors from 'cors'
-const app = express();
-
+import express from "express";
+import connectDB  from "./db/conn.js"; 
 import cookieParser from 'cookie-parser';
-import mongoose from 'mongoose'
-import userRoutes from './Routes/user.routes.js';
-import videoRoutes from './Routes/video.routes.js';
-import commentRoutes from './Routes/comment.routes.js';
-// for mongoose connection with db
+import videoRoutes from  './routes/video.Route.js'
+import channelRoutes from './routes/channel.Route.js'
+import cors from "cors"
+import commentRouter from "./routes/comments.Route.js";
+import userRouter from './routes/users.Route.js'
+import { PORT } from "./config.js";
 
-mongoose.connect('mongodb+srv://ravimrvr:EVuFT85SmywxcBnh@youtube.lksyi2l.mongodb.net/'
-).then(() => {
-        console.log("DB CONNECTED");
-    })
-    .catch((err) => {
-        console.log("DB NOT CONNECTED", err.message);
-    });
 
-// for cookies user port must be define
 
+
+const app = express();
+const port = PORT || 8080;
+connectDB();
 
 app.use(cors({
     origin: "http://localhost:5173",
-    credentials: true
+    credentials:true
 }))
-//controllers
- app.use(express.json())
+app.use(express.json());
 app.use(cookieParser());
 
 
-//routes
-userRoutes(app)
 videoRoutes(app)
-commentRoutes(app)
+commentRouter(app);
+userRouter(app);
+channelRoutes(app)
 
-
-let port=8000
-app.listen(port,()=>(console.log(`backed started at ${port}`)
-))
+app.listen(port, () => {
+    console.log(`App is running on ${port}`);
+});
