@@ -1,6 +1,5 @@
-# YouTube Clone - Backend
-
-This is the backend of a YouTube clone, built with Node.js, Express, and MongoDB as part of a MERN stack capstone project. It provides a RESTful API for user authentication, channel management, video management, and comment handling, supporting the frontend React application.
+# 🎬 YouTube Clone - Backend
+Backend for a YouTube-style app built with Node.js, Express, and MongoDB (MERN stack). It offers a RESTful API for authentication, channel/video management, and comments.
 
 ## Table of Contents
 
@@ -11,37 +10,36 @@ This is the backend of a YouTube clone, built with Node.js, Express, and MongoDB
 - Setup Instructions
 
 ## Features
-
-- User Authentication:
-  - Sign up and login endpoints with JWT-based authentication.
-  - Secure password hashing using bcryptjs.
-  - Protected routes for authenticated users (e.g., channel creation, video uploads).
+-Authentication
+ -Sign up / login with JWT
+ -Password hashing via bcrypt
+ -Protected routes for authenticated users (e.g., channel creation, video uploads).
 
 - Channel Management:
   - Create and fetch channel details (name, description, banner, videos).
   - Associate channels with authenticated users.
 
-- Video Management:
-  - Upload video metadata (title, description, category, thumbnail) and store files via Cloudinary.
-  - Fetch, update, and delete videos, including filtering by category and title search.
+-Video Management
+ -Upload/update/delete video metadata
+ -Cloudinary for media storage
+ -Search & filter videos
 
-- Comment Handling:
-  - Add, edit, and delete comments on videos, restricted to authenticated users.
-  - Store comments with user and video associations.
+-Comment System
+ -Add/edit/delete comments
+ -Authenticated users only
 
-- Database Integration:
-  - MongoDB collections for users, channels, videos, and comments.
-  - Efficient data retrieval for frontend display (e.g., video grid, channel page).
+-MongoDB
+ -Users, Channels, Videos, Comments collections
 
-## Technologies Used
+## 🧰 Tech Stack
+-Node.js
+-Express.js
+-MongoDB + Mongoose
+-JWT (auth)
+-bcryptjs
+-Cloudinary (media storage)
+-Nodemon (dev server)
 
-- Node.js: Runtime environment for server-side JavaScript.
-- Express.js: Web framework for building RESTful APIs.
-- MongoDB with Mongoose: NoSQL database and ORM for data storage and modeling.
-- JWT (JSON Web Tokens): Secure authentication for protected routes.
-- Bcryptjs: Password hashing for user security.
-- Cloudinary: Cloud service for storing video and image files.
-- Nodemon: Development tool for auto-restarting the server.
 
 ## Folder Structure
 
@@ -64,95 +62,52 @@ Fronted/
 │   ├── comments.Route.js      # Comment-related routes
 │   ├── users.Route.js         # User authentication routes
 │   └── video.Route.js         # Video-related routes
-├── config.js                  # Configuration (e.g., PORT, JWT_SECRET)
 ├── package.json               # Dependencies and scripts
 ├── index.js                  # Main server entry point, Database connection
 └── README.md                  # Backend documentation
 ```
 
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js and npm (Node Package Manager).
-- MongoDB (running locally or via MongoDB Atlas).
-- Cloudinary account for media storage (signup at cloudinary.com).
-
 ## API Endpoints
+### 🔐 Auth
+ -POST /api/users/signup – Register
+ -POST /api/users/login – Login
+### 📺 Channels
+ -POST /api/channels – Create (protected)
+ -GET /api/channels/:id – Get details
+### 🎥 Videos
+ -GET /api/videos – List (search, filter)
+ -POST /api/videos – Upload (protected)
+ -PUT /api/videos/:id – Update (protected)
+ -DELETE /api/videos/:id – Delete (protected)
+### 💬 Comments
+ -POST /api/comments – Add (protected)
+ -PUT /api/comments/:id – Edit (protected)
+ -DELETE /api/comments/:id – Delete (protected)
+ -GET /api/comments/:videoId – List for video
 
-### User Authentication
-
-- `POST /api/users/signup`
-  - Register a new user.
-  - Body: `{ "username": "string", "email": "string", "password": "string" }`
-  - Response: `{ "token": "jwt_token", "user": { "userId": "string", "username": "string" } }`
-
-- `POST /api/users/login`
-  - Log in an existing user.
-  - Body: `{ "email": "string", "password": "string" }`
-  - Response: `{ "token": "jwt_token", "user": { "userId": "string", "username": "string" } }`
-
-### Channel Management
-
-- `POST /api/channels` (Protected)
-  - Create a new channel.
-  - Body: `{ "channelName": "string", "description": "string", "channelBanner": "string" }`
-  - Response: `{ "channelId": "string", "channelName": "string" }`
-
-- `GET /api/channels/:id`
-  - Fetch channel details and videos.
-  - Response: `{ "channelId": "string", "channelName": "string", "videos": [] }`
-
-### Video Management
-
-- `GET /api/videos`
-  - Fetch all videos (supports query params for search and category).
-  - Query: `?search=title&category=Entertainment`
-  - Response: `[ { "videoId": "string", "title": "string", "thumbnailUrl": "string", "uploader": "string", "views": number } ]`
-
-- `POST /api/videos` (Protected)
-  - Upload a new video.
-  - Body: `{ "title": "string", "description": "string", "videoType": "string", "videoUrl": "string", "thumbnailUrl": "string" }`
-  - Response: `{ "videoId": "string", "title": "string" }`
-
-- `PUT /api/videos/:id` (Protected)
-  - Update a video.
-  - Body: `{ "title": "string", "description": "string" }`
-  - Response: `{ "videoId": "string", "title": "string" }`
-
-- `DELETE /api/videos/:id` (Protected)
-  - Delete a video.
-  - Response: `{ "message": "Video deleted" }`
-
-### Comment Management
-
-- `POST /api/comments` (Protected)
-  - Add a comment to a video.
-  - Body: `{ "videoId": "string", "text": "string" }`
-  - Response: `{ "commentId": "string", "text": "string" }`
-
-- `PUT /api/comments/:id` (Protected)
-  - Edit a comment.
-  - Body: `{ "text": "string" }`
-  - Response: `{ "commentId": "string", "text": "string" }`
-
-- `DELETE /api/comments/:id` (Protected)
-  - Delete a comment.
-  - Response: `{ "message": "Comment deleted" }`
-
-- `GET /api/comments/:videoId`
-  - Fetch comments for a video.
-  - Response: `[ { "commentId": "string", "text": "string", "userId": "string" } ]`
+⚙️ Setup & Run
+-Prerequisites
+ -Node.js & npm
+ -MongoDB (local or Atlas)
+ -Cloudinary account
 
 ### Installation Steps
+## 🚀 Getting Started
 
-```bash
-cd Backend
+### 🔽 1. Clone the Repository
+
+```
+git clone https://github.com/your-username/youtube-clone-backend.git
+cd youtube-clone-
+```
+
+### 📦 2. Install Dependencies
+```
 npm install
 ```
-### Start the Server
+ ### ▶️ 3. Run the Server
+ ```
+  npm start
+  ```
+  Server runs on: http://localhost:8080
 
-```bash
-npm start
-```
-The server will run on http://localhost:8080.

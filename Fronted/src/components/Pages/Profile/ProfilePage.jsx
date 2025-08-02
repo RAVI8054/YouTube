@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ProfilePage.css';
-import Sidebar from '../../Navbar/SideBar/Sidebar';
+import Sidebar from '../../SideBar/Sidebar';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -15,7 +15,7 @@ const ProfilePage = ({ showSideBar }) => {
       try {
         const response = await axios.get(`http://localhost:8080/api/channel/${id}`);
         setVideos(response.data.videos || []);
-        setUser(response.data.user || null); 
+        // setUser(response.data.user || null); 
       } catch (error) {
         console.error('Error fetching channel videos:', error);
       }

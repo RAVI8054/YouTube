@@ -14,8 +14,8 @@ import { Link } from 'react-router-dom';
 
 function Sidebar() {
   const subscriptions = [
-    { name: "internshala", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754116823/xmmarbsc4hgrkndnly0k.jpg" },
-    { name: "foody", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754117069/z2f0esicd15mrnzbke3q.jpg" },
+    { name: "internshala", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754130071/yohtunhd6xtdig4sh42e.jpg" },
+    { name: "foody", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754130089/s0r0tmrsqaf7dum5xkkb.jpg" },
     { name: "Heart News", img: "https://res.cloudinary.com/dlgorbunu/image/upload/v1754117051/baascssuhe7772tvdnri.jpg" },
   ];
 

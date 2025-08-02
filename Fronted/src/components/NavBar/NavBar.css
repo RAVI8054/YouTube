@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  padding-bottom:10px;
   justify-content: space-between;
   padding: 0 8px;
   color: var(--accent-color);
@@ -162,7 +163,7 @@ body {
 /* ---------- Dropdown ---------- */
 .details-dropdown {
   position: absolute;
-  top: 50px;
+  top: 70px;
   right: 10px;
   background-color: white;
   border: 1px solid #ccc;

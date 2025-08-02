@@ -13,13 +13,14 @@ overflow-x: auto;
   height: auto;
   z-index: 4000;
   scrollbar-width: none;
-  margin-top: 20px;
+  /* margin-top: 40px; */
   overflow-y: auto;
   overflow-x: visible;
 
 }
-
-
+.sidebar-top{
+  padding-top: 20px;
+}
 .top,
 .my-collection,
 .subscriptions {
