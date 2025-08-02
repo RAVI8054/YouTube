@@ -20,16 +20,16 @@ Backend for a YouTube-style app built with Node.js, Express, and MongoDB (MERN s
   - Associate channels with authenticated users.
 
 - 🎥 Video Management
- -Upload/update/delete video metadata
- -Cloudinary for media storage
- -Search & filter videos
+  - Upload/update/delete video metadata
+  - Cloudinary for media storage
+  - Search & filter videos
 
 - 💬 Comment System
- -Add/edit/delete comments
- -Authenticated users only
+  - Add/edit/delete comments
+  - Authenticated users only
 
 - 🍃 MongoDB Integration
- -Users, Channels, Videos, Comments collections
+  - Users, Channels, Videos, Comments collections
 
 ## 🧰 Tech Stack
 - 🟢 Node.js: Runtime environment for server-side JavaScript.
@@ -68,27 +68,27 @@ Fronted/
 
 ## API Endpoints
 ### 🔐 Auth
- -POST /api/users/signup – Register
- -POST /api/users/login – Login
+ - POST /api/users/signup – Register
+ - POST /api/users/login – Login
 ### 📺 Channels
- -POST /api/channels – Create (protected)
- -GET /api/channels/:id – Get details
+ - POST /api/channels – Create (protected)
+ - GET /api/channels/:id – Get details
 ### 🎥 Videos
- -GET /api/videos – List (search, filter)
- -POST /api/videos – Upload (protected)
- -PUT /api/videos/:id – Update (protected)
- -DELETE /api/videos/:id – Delete (protected)
+ - GET /api/videos – List (search, filter)
+ - POST /api/videos – Upload (protected)
+ - PUT /api/videos/:id – Update (protected)
+ - DELETE /api/videos/:id – Delete (protected)
 ### 💬 Comments
- -POST /api/comments – Add (protected)
- -PUT /api/comments/:id – Edit (protected)
- -DELETE /api/comments/:id – Delete (protected)
- -GET /api/comments/:videoId – List for video
+ - POST /api/comments – Add (protected)
+ - PUT /api/comments/:id – Edit (protected)
+ - DELETE /api/comments/:id – Delete (protected)
+ - GET /api/comments/:videoId – List for video
 
 ⚙️ Setup & Run
--Prerequisites
- -Node.js & npm
- -MongoDB (local or Atlas)
- -Cloudinary account
+ - Prerequisites
+ - Node.js & npm
+ - MongoDB (local or Atlas)
+ - Cloudinary account
 
 ### Installation Steps
 ## 🚀 Getting Started
@@ -110,4 +110,3 @@ npm install
   ```
   Server runs on: http://localhost:8080
 
- ```
