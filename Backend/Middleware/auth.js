@@ -1,7 +1,7 @@
 // middleware/auth.js
 import jwt from 'jsonwebtoken';
 import User from '../models/User.Model.js';
-
+ const JWT_SECRET ="king_key"
 const auth = async (req, res, next) => {
   try {
     const token = req.cookies?.token;
@@ -11,7 +11,7 @@ const auth = async (req, res, next) => {
     }
 
     // Verify the token using your secret key
-    const decodedPayload = jwt.verify(token);
+    const decodedPayload = jwt.verify(token, JWT_SECRET);
 
     const existingUser = await User.findById(decodedPayload.userId).select('-password');
 

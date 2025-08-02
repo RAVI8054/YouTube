@@ -79,8 +79,8 @@ export const signIn = async (req, res) => {
     }
 
     // Generate JWT token with user's ID
+    const JWT_SECRET = "king_key"; //  must match auth.js
     const token = jwt.sign({ userId: user._id }, JWT_SECRET);
-
     // Set token in HTTP-only cookie
     res.cookie('token', token, cookieOptions);
 

@@ -93,7 +93,7 @@ const SignUp = () => {
     try {
       console.log(formData)
       // Submit signup data to backend
-      const res = await axios.post('http://localhost:8000/auth/signUp', formData);
+      const res = await axios.post('http://localhost:8080/auth/signUp', formData);
       toast.success(res.data.message);
       setSuccessMsg(res.data.message);
       navigate('/'); 
