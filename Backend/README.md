@@ -7,9 +7,8 @@ This is the backend of a YouTube clone, built with Node.js, Express, and MongoDB
 - Features
 - Technologies Used
 - Folder Structure
-- Setup Instructions
 - API Endpoints
-
+- Setup Instructions
 
 ## Features
 

@@ -27,7 +27,7 @@ function EditVideo() {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/video/${id}`, {
+        const res = await axios.get(`http://localhost:8080/api/video/${id}`, {
           withCredentials: true,
         });
         const { title, description, videoType, thumbnail } = res.data.video;
@@ -100,7 +100,7 @@ function EditVideo() {
 
       // Send PUT request to update video
       await axios.put(
-        `http://localhost:8000/api/video/${id}`,
+        `http://localhost:8080/api/video/${id}`,
         updatedVideoData,
         { withCredentials: true }
       );

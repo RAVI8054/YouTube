@@ -11,7 +11,7 @@ const auth = async (req, res, next) => {
     }
 
     // Verify the token using your secret key
-    const decodedPayload = jwt.verify(token, JWT_SECRET);
+    const decodedPayload = jwt.verify(token);
 
     const existingUser = await User.findById(decodedPayload.userId).select('-password');
 

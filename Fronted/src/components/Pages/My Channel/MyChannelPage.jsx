@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import Sidebar from '../../Navbar/SideBar/Sidebar';
+import Sidebar from '../SideBar/Sidebar';
 import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -22,9 +22,9 @@ const MyChannelPage = ({ showSideBar }) => {
 
   // Fetch channel details and videos when component mounts or user ID changes
   useEffect(() => {
-    const fetchChannelDetails = async () => {
+    async function fetchChannelDetails(){
       try {
-        const res = await axios.get(`http://localhost:8000/channel/by-user/${id}`);
+        const res = await axios.get(`http://localhost:8080/channel/by-user/${id}`);
         setChannel(res.data);
       } catch (error) {
         console.error('Failed to fetch channel details:', error);
@@ -34,7 +34,7 @@ const MyChannelPage = ({ showSideBar }) => {
 
     const fetchChannelVideos = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/channel/${id}`);
+        const res = await axios.get(`http://localhost:8080/api/channel/${id}`);
         setVideos(res.data.videos || []);
       } catch (error) {
         console.error('Failed to fetch videos:', error);
@@ -55,7 +55,7 @@ const MyChannelPage = ({ showSideBar }) => {
   // Confirm delete: make API call and update UI
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:8000/api/video/${videoToDelete}`, {
+      await axios.delete(`http://localhost:8080/api/video/${videoToDelete}`, {
         withCredentials: true,
       });
       setVideos(videos.filter((v) => v._id !== videoToDelete));
