@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Sidebar from '../../Navbar/SideBar/Sidebar';
+import Sidebar from '../../SideBar/Sidebar'
 
 function HomePage({ showSideBar, searchQuery }) {
   const [data, setData] = useState([]); // Stores filtered videos to be displayed

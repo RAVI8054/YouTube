@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './app.css';
 
 // Components
-import NavBar from './components/Navbar/NavBar/NavBar';
+import NavBar from './components/NavBar/NavBar';
 
 // Lazy load page components
 const Home = lazy(() => import('./components/Pages/Home/Home'));

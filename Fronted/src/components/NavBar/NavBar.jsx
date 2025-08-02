@@ -10,7 +10,7 @@ import AddIcon from '@mui/icons-material/Add';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 // Login component
-import LogIn from '../../Pages/LogIn/LogIn';
+import LogIn from '../Pages/LogIn/LogIn';
 
 // CSS styling
 import './NavBar.css';
@@ -111,7 +111,7 @@ function NavBar({ toggleSideBar, onSearch }) {
         <Link to={'/'}>
           <img
             className='youtube-icon'
-            width={"40px"}
+            width={"42px"}
             color='white'
             src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2560px-Logo_of_YouTube_%282015-2017%29.svg.png'
           />
