@@ -84,14 +84,15 @@ Fronted/
  - DELETE /api/comments/:id – Delete (protected)
  - GET /api/comments/:videoId – List for video
 
-⚙️ Setup & Run
- - Prerequisites
- - Node.js & npm
- - MongoDB (local or Atlas)
- - Cloudinary account
+
+## ⚙️ Setup & Run
+### Prerequisites
+  - Node.js & npm
+  - MongoDB (local or Atlas)
+  - Cloudinary account
 
 ### Installation Steps
-## 🚀 Getting Started
+### 🚀 Getting Started
 
 ### 🔽 1. Clone the Repository
 
