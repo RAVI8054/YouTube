@@ -4,8 +4,8 @@ A full-stack YouTube-style application built with the MERN stack (MongoDB, Expre
 ---
 
 ## ⚙️ Tech Stack
-### Fronted
- - ⚛️ React
+### Fronted 
+  - ⚛️ React
  - 🚀 Vite
  - 🔄 React Router
  - 🎨 Material UI
@@ -89,7 +89,7 @@ npm install
   ```
   Server runs on: http://localhost:8080
 
- ```
+
 
 
 
