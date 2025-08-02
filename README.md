@@ -5,34 +5,31 @@ A full-stack YouTube-style application built with the MERN stack (MongoDB, Expre
 
 ## ⚙️ Tech Stack
 ### Fronted
--⚛️ React
--🚀 Vite
--🔄 React Router
--🎨 Material UI
--🔥 Axios
--💬 React Toastify
--🎯 Custom Hooks
--🧠 Lazy Loading + Code Splitting
--🖌️ CSS Modules
+ - ⚛️ React
+ - 🚀 Vite
+ - 🔄 React Router
+ - 🎨 Material UI
+ - 🔥 Axios
+ - 💬 React Toastify
+ - 🎯 Custom Hooks
+ - 🧠 Lazy Loading + Code Splitting
+ - 🖌️ CSS Modules
 
-### More deatils fronted go:
-## 📌 GitHub Repository
+### 📌 More deatils fronted go:
   - [🔗  Fronted README](https://github.com/RAVI8054/YouTube/blob/main/Fronted/README.md)
 
 
 ### backend
+ - 🟢 Node.js: Runtime environment for server-side JavaScript.
+ - ⚫ Express.js: Web framework for building RESTful APIs.
+ - 🍃 MongoDB + 🟥 Mongoose: NoSQL database and ORM for data storage and modeling.
+ - 🔐 JWT (Auth):
+ - 🔑 bcryptjs:Password hashing for user security.
+ - ☁️ Cloudinary (Media Storage)
+ - 🔁 Nodemon: Development tool for auto-restarting the server.
 
-- 🟢 Node.js: Runtime environment for server-side JavaScript.
-- ⚫ Express.js: Web framework for building RESTful APIs.
-- 🍃 MongoDB + 🟥 Mongoose: NoSQL database and ORM for data storage and modeling.
-- 🔐 JWT (Auth):
-- 🔑 bcryptjs:Password hashing for user security.
-- ☁️ Cloudinary (Media Storage)
-- 🔁 Nodemon: Development tool for auto-restarting the server.
-
-### More Detials Backed go:
-- [https://github.com/RAVI8054/YouTube/blob/main/Backend/README.md] Backed README
-
+### 📌 More Detials Backed go:
+ - [🔗   Backed README](https://github.com/RAVI8054/YouTube/blob/main/Backend/README.md)
 
 ---
 
@@ -93,6 +90,7 @@ npm install
   Server runs on: http://localhost:8080
 
  ```
+
 
 
 
