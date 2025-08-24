@@ -1,4 +1,4 @@
-import Channel from '../Models/Channels.Model.js';
+import Channel from '../models/Channels.Model.js';
 
 // Create a channel
 export const createChannel = async (req, res) => {

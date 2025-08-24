@@ -1,5 +1,5 @@
 // Import dependencies and configurations
-import User from '../Models/User.model.js';
+import User from '../models/User.Model.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -16,7 +16,7 @@ const cookieOptions = {
 export const signUp = async (req, res) => {
   try {
     const { username, email, password, profilePic, channelName, about } = req.body;
-    console.log("UserDeatisls", req.body)
+console.log("UserDeatisls",req.body)
     // Check if user with the same username or email already exists
     const existingUser = await User.findOne({
       $or: [{ userName: username }, { email }]
