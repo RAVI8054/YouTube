@@ -1,5 +1,5 @@
 import express from "express";
-import Video from "../models/Video.Model.js";
+import Video from "../Models/Video.Model.js";
 
 /**
  * Creates and saves a new video entry to the database.
