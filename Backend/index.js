@@ -20,10 +20,15 @@ mongoose.connect('mongodb+srv://ravimrvr:EVuFT85SmywxcBnh@youtube.lksyi2l.mongod
 mongoose.set('strictQuery', false);
 
 const app = express();
+// app.use(cors({
+//     origin: "http://localhost:5173",
+//     credentials: true
+// }))
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     credentials: true
-}))
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
