@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import './app.css';
+import './App.css';
 
 // Components
 import NavBar from './components/NavBar/NavBar';
