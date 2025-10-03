@@ -1,5 +1,5 @@
 /* Base homepage content styling */
-*{
+* {
   overflow-x: auto;
 }
 
@@ -33,7 +33,7 @@
 
 /* When sidebar is shown — adjust margin */
 .top-bar.with_sidebar {
-  margin-left: 0px; 
+  margin-left: 0px;
 }
 
 
@@ -74,42 +74,43 @@
   gap: 16px;
   overflow-x: hidden;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
- 
+
 }
 
 .show-videos.with_sidebar {
   grid-template-columns: repeat(3, 1fr);
-  
+  gap: 20px;
+  margin-left: 20px;
 }
 
 
 .show-videos.without_sidebar {
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 60px;
-  gap: 50px;
-
-
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 20px;
+  gap: 10px;
 }
+
 .video-box.without_sidebar {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 340px;
-  
+  width: auto;
+
 }
+
 .video-box.with_sidebar {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 320px;
-  
+
 }
 
 /* Thumbnail box styling */
 .thumbnail-box {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; 
+  aspect-ratio: 16 / 9;
 }
 
 .thumbnail-box img {
@@ -139,6 +140,7 @@
   flex-direction: row;
   gap: 10px;
 }
+
 .video_detail_box .img {
   width: 40px;
   height: 40px;
@@ -168,7 +170,7 @@
 /* Responsive adjustments */
 @media (max-width: 1025px) {
   .top-bar.with_sidebar {
-    margin-left: 0; 
+    margin-left: 0;
   }
 
   .show-videos {
@@ -178,48 +180,53 @@
 
 
   }
-  .video-box.without_sidebar{
+
+  .video-box.without_sidebar {
     display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 320px;
-    
+    flex-direction: column;
+    position: relative;
+    width: 320px;
+
   }
 }
 
 @media (max-width: 1155px) {
-   .video-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%; 
+  .video-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 
   }
 
-  .show-videos {        
-        grid-template-columns: repeat(2, 1fr) !important; /* Ensures two videos per row */       
-        margin-left: 0 !important;
-  }
-  .top-bar{
+  .show-videos {
+    grid-template-columns: repeat(2, 1fr) !important;
+    /* Ensures two videos per row */
     margin-left: 0 !important;
   }
-  .video-box{
+
+  .top-bar {
+    margin-left: 0 !important;
+  }
+
+  .video-box {
     width: 90% !important;
   }
- 
- 
+
+
 }
 
 @media (max-width: 480px) {
   .show-videos {
     display: flex;
     margin-left: 0px !important;
-    
+
     flex-direction: column;
     justify-content: center;
     grid-template-columns: 1fr;
   }
-  .video-box{
+
+  .video-box {
     width: 90% !important;
   }
-  
+
 }
