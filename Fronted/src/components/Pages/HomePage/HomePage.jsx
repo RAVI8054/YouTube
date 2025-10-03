@@ -12,7 +12,7 @@ function HomePage({ showSideBar, searchQuery }) {
   useEffect(() => {
     const fetchVideosAndTypes = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/videos');
+        const response = await axios.get(' https://youtube-backend-b29o.onrender.com/api/videos');
         const allVideos = response.data.videos;
 
         // Extract unique video types from the response
@@ -68,23 +68,23 @@ function HomePage({ showSideBar, searchQuery }) {
         {data.length > 0 ? (
           data.map((item) => {
             // to see when video was created in hours, days or minutes
-                const createdAt = new Date(item.createdAt);
-                const now = new Date();
-                const diffInMs = now - createdAt;
-                const daysAgo = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
+            const createdAt = new Date(item.createdAt);
+            const now = new Date();
+            const diffInMs = now - createdAt;
+            const daysAgo = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 
-                let timeAgo;
-                if (daysAgo > 0) {
-                  timeAgo = `${daysAgo} days ago`;
-                } else {
-                  const hoursAgo = Math.floor(diffInMs / (1000 * 60 * 60));
-                  if (hoursAgo > 0) {
-                    timeAgo = `${hoursAgo} hours ago`;
-                  } else {
-                    const minutesAgo = Math.floor(diffInMs / (1000 * 60));
-                    timeAgo = `${minutesAgo} minutes ago`;
-                  }
-                }
+            let timeAgo;
+            if (daysAgo > 0) {
+              timeAgo = `${daysAgo} days ago`;
+            } else {
+              const hoursAgo = Math.floor(diffInMs / (1000 * 60 * 60));
+              if (hoursAgo > 0) {
+                timeAgo = `${hoursAgo} hours ago`;
+              } else {
+                const minutesAgo = Math.floor(diffInMs / (1000 * 60));
+                timeAgo = `${minutesAgo} minutes ago`;
+              }
+            }
             return (
               <Link to={`/video/${item._id}`} className={`video-box ${showSideBar ? 'with_sidebar' : 'without_sidebar'}`} key={item._id}>
                 <div className="thumbnail-box">

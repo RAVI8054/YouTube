@@ -106,7 +106,7 @@ Fronted/
 
 ### Prerequisites
 - Node.js and npm
-- Backend running at: http://localhost:8080
+- Backend running at:  https://youtube-backend-b29o.onrender.com
 
 ### Steps
 

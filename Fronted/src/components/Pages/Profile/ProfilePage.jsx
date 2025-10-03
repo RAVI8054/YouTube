@@ -13,7 +13,7 @@ const ProfilePage = ({ showSideBar }) => {
   useEffect(() => {
     const fetchChannel = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/channel/${id}`);
+        const response = await axios.get(` https://youtube-backend-b29o.onrender.com/api/channel/${id}`);
         setVideos(response.data.videos || []);
         // setUser(response.data.user || null); 
       } catch (error) {
@@ -24,7 +24,7 @@ const ProfilePage = ({ showSideBar }) => {
     fetchChannel();
   }, [id]);
 
-  
+
 
   // Extract first video to display as a "featured" item
   const firstVideo = videos[0];

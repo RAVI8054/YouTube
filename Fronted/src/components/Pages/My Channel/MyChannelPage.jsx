@@ -22,9 +22,9 @@ const MyChannelPage = ({ showSideBar }) => {
 
   // Fetch channel details and videos when component mounts or user ID changes
   useEffect(() => {
-    async function fetchChannelDetails(){
+    async function fetchChannelDetails() {
       try {
-        const res = await axios.get(`http://localhost:8080/channel/by-user/${id}`);
+        const res = await axios.get(` https://youtube-backend-b29o.onrender.com/channel/by-user/${id}`);
         setChannel(res.data);
       } catch (error) {
         console.error('Failed to fetch channel details:', error);
@@ -34,7 +34,7 @@ const MyChannelPage = ({ showSideBar }) => {
 
     const fetchChannelVideos = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/api/channel/${id}`);
+        const res = await axios.get(` https://youtube-backend-b29o.onrender.com/api/channel/${id}`);
         setVideos(res.data.videos || []);
       } catch (error) {
         console.error('Failed to fetch videos:', error);
@@ -55,7 +55,7 @@ const MyChannelPage = ({ showSideBar }) => {
   // Confirm delete: make API call and update UI
   const handleDeleteConfirm = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/video/${videoToDelete}`, {
+      await axios.delete(` https://youtube-backend-b29o.onrender.com/api/video/${videoToDelete}`, {
         withCredentials: true,
       });
       setVideos(videos.filter((v) => v._id !== videoToDelete));
@@ -81,7 +81,7 @@ const MyChannelPage = ({ showSideBar }) => {
         return (
           <div className="profile-videos">
             {videos.length > 0 ? (
-              
+
               videos.map((video) => {
                 // to see when video was created in hours, days or minutes
                 const createdAt = new Date(video.createdAt);
@@ -102,33 +102,34 @@ const MyChannelPage = ({ showSideBar }) => {
                   }
                 }
 
-                 return(
-                <div key={video._id} className="profile-video-card">
-                  <Link to={`/video/${video._id}`} className="profile-video-link">
-                    <div className="profile-video-thumbnail-container">
-                      <img
-                        src={video.thumbnail || 'https://via.placeholder.com/320x180'}
-                        alt={video.title}
-                        className="profile-video-thumbnail"
-                      />
-                      {/* Hardcoded duration placeholder */}
-                      <span className="profile-video-duration">8:60</span>
-                    </div>
-                    <h3 className="profile-video-title">{video.title}</h3>
-                    <p className="profile-video-meta">
-                      20k views · {timeAgo}  {/* Hardcoded views  */}
-                    </p>
-                  </Link>
-                  <div className="profile-video-actions">
-                    <button onClick={() => handleDeleteClick(video._id)} className="delete-btn">
-                      Delete
-                    </button>
-                    <Link to={`/edit-video/${video._id}`} className="edit-btn">
-                      Edit
+                return (
+                  <div key={video._id} className="profile-video-card">
+                    <Link to={`/video/${video._id}`} className="profile-video-link">
+                      <div className="profile-video-thumbnail-container">
+                        <img
+                          src={video.thumbnail || 'https://via.placeholder.com/320x180'}
+                          alt={video.title}
+                          className="profile-video-thumbnail"
+                        />
+                        {/* Hardcoded duration placeholder */}
+                        <span className="profile-video-duration">8:60</span>
+                      </div>
+                      <h3 className="profile-video-title">{video.title}</h3>
+                      <p className="profile-video-meta">
+                        20k views · {timeAgo}  {/* Hardcoded views  */}
+                      </p>
                     </Link>
+                    <div className="profile-video-actions">
+                      <button onClick={() => handleDeleteClick(video._id)} className="delete-btn">
+                        Delete
+                      </button>
+                      <Link to={`/edit-video/${video._id}`} className="edit-btn">
+                        Edit
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              )})
+                )
+              })
             ) : (
               <p className="profile-no-videos">No videos available</p>
             )}
@@ -170,7 +171,7 @@ const MyChannelPage = ({ showSideBar }) => {
 
   return (
     <div className="profile-container">
-    
+
 
       <div className={showSideBar ? 'profile-content with-sidebar' : 'profile-content without-sidebar'}>
         {channel && (
@@ -234,7 +235,7 @@ const MyChannelPage = ({ showSideBar }) => {
           </div>
         )}
       </div>
-      <ToastContainer style={{overflow:"hidden"}}/>
+      <ToastContainer style={{ overflow: "hidden" }} />
     </div>
   );
 };

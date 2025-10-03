@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SingUp.css'; 
+import './SingUp.css';
 import axios from 'axios';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Link, useNavigate } from 'react-router-dom';
@@ -93,10 +93,10 @@ const SignUp = () => {
     try {
       console.log(formData)
       // Submit signup data to backend
-      const res = await axios.post('http://localhost:8080/auth/signUp', formData);
+      const res = await axios.post(' https://youtube-backend-b29o.onrender.com/auth/signUp', formData);
       toast.success(res.data.message);
       setSuccessMsg(res.data.message);
-      navigate('/'); 
+      navigate('/');
     } catch (err) {
       const errorMsg = err.response?.data?.error || 'Signup failed';
       setError(errorMsg);
@@ -203,7 +203,7 @@ const SignUp = () => {
       </div>
 
       {/* Toast container for notifications */}
-      <ToastContainer style={{overflow:"hidden"}}/>
+      <ToastContainer style={{ overflow: "hidden" }} />
     </div>
   );
 };

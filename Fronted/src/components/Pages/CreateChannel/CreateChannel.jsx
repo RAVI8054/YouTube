@@ -58,7 +58,7 @@ function CreateChannel() {
     if (!userId) return toast.error('You must be logged in to create a channel');
 
     try {
-      const response = await axios.post('http://localhost:8080/channel', {
+      const response = await axios.post(' https://youtube-backend-b29o.onrender.com/channel', {
         channelName,
         description,
         owner: userId,
